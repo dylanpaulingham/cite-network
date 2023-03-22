@@ -1,13 +1,13 @@
 // set the dimensions and margins of the graph
 const sc_margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - sc_margin.left - sc_margin.right,
-    height = 400 - sc_margin.top - sc_margin.bottom;
+    sc_width = 460 - sc_margin.left - sc_margin.right,
+    sc_height = 400 - sc_margin.top - sc_margin.bottom;
 
 // append the svg object to the body of the page
 const sc_svg = d3.select("#scatterplot")
   .append("svg")
-    .attr("width", width + sc_margin.left + sc_margin.right)
-    .attr("height", height + sc_margin.top + sc_margin.bottom)
+    .attr("width", sc_width + sc_margin.left + sc_margin.right)
+    .attr("height", sc_height + sc_margin.top + sc_margin.bottom)
   .append("g")
     .attr("transform",
           "translate(" + sc_margin.left + "," + sc_margin.top + ")");
@@ -36,15 +36,15 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     // x axis
     const x = d3.scaleLinear()
       .domain([0, (Xmax * 1.25)])
-      .range([ 0, width ]);
+      .range([ 0, sc_width ]);
     const xAxis = sc_svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
+      .attr("transform", "translate(0," + sc_height + ")")
       .call(d3.axisBottom(x));
 
   // y axis
     const y = d3.scaleLinear()
       .domain([0, (Ymax * 1.25)])
-      .range([ height, 0]);
+      .range([ sc_height, 0]);
     const yAxis = sc_svg.append("g")
       .call(d3.axisLeft(y));
 
