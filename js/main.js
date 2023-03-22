@@ -116,7 +116,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
           .style("top", (d3.event.pageY - 12) + "px")
           .style("position", "absolute")
           .style("background-color", "white")
-          .html(d["title"].slice(0,20) + "...<br/>(" + d["venue"] + ")<br/>" 
+          .html('"' + d["title"].slice(0,20) + '..."<br/>(' + d["venue"] + ")<br/>" 
                 + x_axis + ": " + d[x_axis] + "<br/>" + y_axis + ": " + d[y_axis]);
     })
     // remove highlight on mouseout
