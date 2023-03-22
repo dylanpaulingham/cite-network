@@ -67,13 +67,15 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
       d3.select("#chart_title").text(selectedX + " vs " + selectedY);
 
       // update x axis
-      const x_max = d3.max(data, function(d) { return d[selectedX]; });
-      x.domain([0, (x_max * 1.25)])
+      const x_min = d3.min(data, function(d) { return +d[selectedX]; });
+      const x_max = d3.max(data, function(d) { return +d[selectedX]; });
+      x.domain([(x_min / 1.25), (x_max * 1.25)])
       xAxis.transition().duration(1000).call(d3.axisBottom(x))
 
       // update y axis
-      const y_max = d3.max(data, function(d) { return d[selectedY]; });
-      y.domain([0, (y_max * 1.25)])
+      const y_min = d3.min(data, function(d) { return +d[selectedY]; });
+      const y_max = d3.max(data, function(d) { return +d[selectedY]; });
+      y.domain([(y_min / 1.25), (y_max * 1.25)])
       yAxis.transition().duration(1000).call(d3.axisLeft(y))
 
       // update points
