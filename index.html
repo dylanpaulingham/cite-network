@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="./js/d3.v6.1.1/d3.min.js"></script>
-
     <title>Scientific Publication Visualization</title>
   </head>
 
@@ -29,16 +28,20 @@
     </div>
 
     <div>
-      <h2>Visualization</h2>
-      TODO: Build your visualization tool here
-      <div id="visualencoding1"></div>
-      <div id="graphencoding"></div>
+        <h2>Visualization</h2>
+        TODO: Build your visualization tool here  
+        <h3 id="chart_title">num_authors vs pub_year</h3>
+        <div id="scatterplot"></div>
+        <select id="Xselect"></select>
+        <select id="Yselect"></select>
     </div>
 
     <div>
       <h2>Acknowledgements</h2>
       TODO: Cite resources used here babababoooeott
     </div>
+
+    <script type="text/javascript" src="js/main.js"></script>
     <script src="./graph.js"></script>
   </body>
 </html>
