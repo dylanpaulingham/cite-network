@@ -89,12 +89,52 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
 
 
     // event listener for dropdowns
-    d3.selectAll("#Xselect, #Yselect").on("change", function(d) {
-        // take values from select object
+    d3.selectAll("#Xselect, #Yselect")
+    // record values from select objects
+    .on("change", function(d) {
         const selectedX = d3.select("#Xselect").property("value")
         const selectedY = d3.select("#Yselect").property("value")
         updatePlot(selectedX, selectedY)
     })
+
+    // event listeners for points
+    d3.selectAll("circle")
+    // highlight point when hovered over
+    .on("mouseenter", function(d) {
+      const x_axis = d3.select("#Xselect").property("value")
+      const y_axis = d3.select("#Yselect").property("value")
+      d3.select(this)
+          .attr("title", d.amount)
+          .style("cursor", "pointer")
+          .style("fill-opacity", 1)
+          .style("fill", "crimson");
+    // add tooltip with information on point
+      d3.select("#tooltip")
+          .style("max-width", "250px")
+          .style("font-size", "12px")
+          .style("left", (d3.event.pageX + 12) + "px")
+          .style("top", (d3.event.pageY - 12) + "px")
+          .style("position", "absolute")
+          .style("background-color", "white")
+          .html(d["title"].slice(0,20) + "...<br/>(" + d["venue"] + ")<br/>" 
+                + x_axis + ": " + d[x_axis] + "<br/>" + y_axis + ": " + d[y_axis]);
+    })
+    // remove highlight on mouseout
+    .on("mouseout", function(d) {
+      d3.select(this)
+        .attr("title", d.amount)
+        .style("cursor", "default")
+        .style("fill-opacity", 0.5)
+        .style("fill", "coral")
+      d3.select("#tooltip")
+        .style("left", "-9999px")
+        .style("top", "-9999px");
+    })
+    .on("click", function(d) {
+      d3.select("#tooltip")
+        .html("Abstract: " + d["abstract"])
+
+    });
 
 });
 
