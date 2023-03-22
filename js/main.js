@@ -1,16 +1,16 @@
 // set the dimensions and margins of the graph
-const margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+const sc_margin = {top: 10, right: 30, bottom: 30, left: 60},
+    width = 460 - sc_margin.left - sc_margin.right,
+    height = 400 - sc_margin.top - sc_margin.bottom;
 
 // append the svg object to the body of the page
-const svg = d3.select("#scatterplot")
+const sc_svg = d3.select("#scatterplot")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width + sc_margin.left + sc_margin.right)
+    .attr("height", height + sc_margin.top + sc_margin.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+          "translate(" + sc_margin.left + "," + sc_margin.top + ")");
 
 d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data/30papers.csv", function(data) {
 
@@ -37,7 +37,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     const x = d3.scaleLinear()
       .domain([0, (Xmax * 1.25)])
       .range([ 0, width ]);
-    const xAxis = svg.append("g")
+    const xAxis = sc_svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
@@ -45,11 +45,11 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     const y = d3.scaleLinear()
       .domain([0, (Ymax * 1.25)])
       .range([ height, 0]);
-    const yAxis = svg.append("g")
+    const yAxis = sc_svg.append("g")
       .call(d3.axisLeft(y));
 
   // points
-    svg.append('g')
+    sc_svg.append('g')
       .selectAll("dot")
       .data(data)
       .enter()
@@ -77,7 +77,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
       yAxis.transition().duration(1000).call(d3.axisLeft(y))
 
       // update points
-      svg.selectAll("circle")
+      sc_svg.selectAll("circle")
          .data(data)
          .transition()
          .duration(1000)
