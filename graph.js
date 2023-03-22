@@ -1,6 +1,6 @@
-const margin = { top: 10, right: 30, bottom: 30, left: 40 },
-  width = 400 - margin.left - margin.right,
-  height = 400 - margin.top - margin.bottom;
+const margin = { top: 10, right: 30, bottom: 30, left: 170 },
+  width = 750 - margin.left - margin.right,
+  height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3
@@ -11,9 +11,7 @@ const svg = d3
   .append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-d3.json(
-  "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_network.json"
-).then(function (data) {
+d3.json("cites_papers.json").then(function (data) {
   // Initialize the links
   const link = svg
     .selectAll("line")

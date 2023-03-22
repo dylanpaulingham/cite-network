@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    { "id": 0, "name": "Profiling epigenetic age in single cells" },
+    { "id": 1, "name": "The epigenetic basis of cellular heterogeneity" },
+    {
+      "id": 2,
+      "name": "Single-cell epigenomics: techniques and emerging applications"
+    },
+    {
+      "id": 3,
+      "name": "High-throughput chromatin accessibility profiling at single-cell resolution"
+    },
+    {
+      "id": 4,
+      "name": "Single-cell multimodal profiling reveals cellular epigenetic heterogeneity"
+    },
+    { "id": 5, "name": "Single cell cancer epigenetics" },
+    {
+      "id": 6,
+      "name": "Multifactorial profiling of epigenetic landscapes at single-cell resolution using MulTI-Tag"
+    },
+    {
+      "id": 7,
+      "name": "Single-cell chromatin modification profiling reveals increased epigenetic variations with aging"
+    },
+    {
+      "id": 8,
+      "name": "RA3 is a reference-guided approach for epigenetic characterization of single cells"
+    },
+    {
+      "id": 9,
+      "name": "Parallel single-cell sequencing links transcriptional and epigenetic heterogeneity"
+    },
+    {
+      "id": 10,
+      "name": "Chromatin Velocity reveals epigenetic dynamics by single-cell profiling of heterochromatin and euchromatin"
+    },
+    {
+      "id": 11,
+      "name": "Single-cell analysis of clonal maintenance of transcriptional and epigenetic states in cancer cells"
+    },
+    {
+      "id": 12,
+      "name": "Integrative single-cell analysis of transcriptional and epigenetic states in the human adult brain"
+    },
+    {
+      "id": 13,
+      "name": "Single-cell multimodal glioma analyses identify epigenetic regulators of cellular plasticity and environmental stress response"
+    },
+    {
+      "id": 14,
+      "name": "Bifurcation analysis of single-cell gene expression data reveals epigenetic landscape"
+    },
+    {
+      "id": 15,
+      "name": "cfNOMe\u2014A single assay for comprehensive epigenetic analyses of cell-free DNA"
+    },
+    {
+      "id": 16,
+      "name": "Cell-type-specific resolution epigenetics without the need for cell sorting or single-cell biology"
+    },
+    {
+      "id": 17,
+      "name": "Decoding dynamic epigenetic landscapes in human oocytes using single-cell multi-omics sequencing"
+    },
+    {
+      "id": 18,
+      "name": "A single-cell transcriptomics CRISPR-activation screen identifies epigenetic regulators of the zygotic genome activation program"
+    },
+    {
+      "id": 19,
+      "name": "Genotyping of Multiple Genomic Loci with Chromatin Accessibility Profiling in Single Cells Links Clonal Hierarchy with Epigenetic Variation in Acute Myeloid Leukemia"
+    },
+    { "id": 20, "name": "Epigenetics reloaded: the single-cell revolution" },
+    {
+      "id": 21,
+      "name": "Multi-omics profiling of mouse gastrulation at single-cell resolution"
+    },
+    {
+      "id": 22,
+      "name": "Chemoenzymatic labeling of DNA methylation patterns for single-molecule epigenetic mapping"
+    },
+    {
+      "id": 23,
+      "name": "CoBATCH for high-throughput single-cell epigenomic profiling"
+    },
+    {
+      "id": 24,
+      "name": "Strategies for the acquisition of transcriptional and epigenetic information in single cells"
+    },
+    {
+      "id": 25,
+      "name": "Single-cell epigenomics: powerful new methods for understanding gene regulation and cell identity"
+    },
+    {
+      "id": 26,
+      "name": "Epigenetic landscapes of single-cell chromatin accessibility and transcriptomic immune profiles of T cells in COVID-19 patients"
+    },
+    {
+      "id": 27,
+      "name": "A single nucleotide polymorphism chip-based method for combined genetic and epigenetic profiling: validation in decitabine therapy and tumor/normal comparisons"
+    },
+    {
+      "id": 28,
+      "name": "Epigenetic evolution and lineage histories of chronic lymphocytic leukaemia"
+    },
+    { "id": 29, "name": "Molecular profiling for precision cancer therapies" }
+  ],
+  "links": [
+    { "source": 1, "target": 5 },
+    { "source": 2, "target": 7 },
+    { "source": 2, "target": 16 },
+    { "source": 3, "target": 1 },
+    { "source": 4, "target": 1 },
+    { "source": 4, "target": 5 },
+    { "source": 7, "target": 1 },
+    { "source": 9, "target": 1 },
+    { "source": 9, "target": 21 },
+    { "source": 9, "target": 17 },
+    { "source": 9, "target": 13 },
+    { "source": 9, "target": 25 },
+    { "source": 9, "target": 0 },
+    { "source": 9, "target": 16 },
+    { "source": 9, "target": 4 },
+    { "source": 9, "target": 5 },
+    { "source": 10, "target": 6 },
+    { "source": 10, "target": 5 },
+    { "source": 11, "target": 5 },
+    { "source": 13, "target": 5 },
+    { "source": 17, "target": 5 }
+  ]
+}
