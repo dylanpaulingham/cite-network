@@ -26,12 +26,13 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
       .text(function (d) { return d; }) // update dropdown text
       .attr("value", function (d) { return d; }) // assign values to options
 
-    // set second dropdown to different value from first
-    d3.select('#Yselect').property('value', allGroup[1]);
+    // set dropdown to initial values of interest 
+    d3.select('#Xselect').property('value', allGroup[2]);
+    d3.select('#Yselect').property('value', allGroup[3]);
 
     // determine max value for each axis to determine axis range
-    const Xmax = d3.max(data, function(d) { return d[allGroup[0]]; });
-    const Ymax = d3.max(data, function(d) { return d[allGroup[1]]; });
+    const Xmax = d3.max(data, function(d) { return +d[allGroup[2]]; });
+    const Ymax = d3.max(data, function(d) { return +d[allGroup[3]]; });
 
     // x axis
     const x = d3.scaleLinear()
@@ -54,8 +55,8 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
       .data(data)
       .enter()
       .append("circle")
-        .attr("cx", function (d) { return x(d[allGroup[0]]); } )
-        .attr("cy", function (d) { return y(d[allGroup[1]]); } )
+        .attr("cx", function (d) { return x(d[allGroup[2]]); } )
+        .attr("cy", function (d) { return y(d[allGroup[3]]); } )
         .attr("r", 5)
         .attr("fill-opacity", 0.5)
         .attr("fill", "coral")
