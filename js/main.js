@@ -12,7 +12,7 @@ const svg = d3.select("#scatterplot")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/blob/master/30papers.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data/30papers.csv", function(data) {
 
     // define possible options for axes (numerical columns from csv)
     const allGroup = ["num_authors", "pub_year", "num_citations", "cite_per_year", "page_length", "num_profiled_authors"]
