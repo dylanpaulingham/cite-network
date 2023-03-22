@@ -57,7 +57,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
       .append("circle")
         .attr("cx", function (d) { return x(d[allGroup[2]]); } )
         .attr("cy", function (d) { return y(d[allGroup[3]]); } )
-        .attr("r", 5)
+        .attr("r", 7)
         .attr("fill-opacity", 0.5)
         .attr("fill", "coral")
 
