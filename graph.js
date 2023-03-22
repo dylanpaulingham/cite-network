@@ -30,7 +30,7 @@ d3.json("cites_papers.json", function (data) {
     .data(data.nodes)
     .enter()
     .append("circle")
-    .attr("r", 20)
+    .attr("r", 10)
     .style("fill", "#69b3a2");
 
   // Let's list the force we wanna apply on the network
@@ -45,7 +45,7 @@ d3.json("cites_papers.json", function (data) {
         }) // This provide  the id of a node
         .links(data.links) // and this the list of links
     )
-    .force("charge", d3.forceManyBody().strength(-400)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+    .force("charge", d3.forceManyBody().strength(-200)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
     .force("center", d3.forceCenter(networkWidth / 2, networkHeight / 2)) // This force attracts nodes to the center of the svg area
     .on("end", ticked);
 
