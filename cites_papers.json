@@ -1,7 +1,13 @@
 {
   "nodes": [
-    { "id": 0, "name": "Profiling epigenetic age in single cells" },
-    { "id": 1, "name": "The epigenetic basis of cellular heterogeneity" },
+    {
+      "id": 0,
+      "name": "Profiling epigenetic age in single cells"
+    },
+    {
+      "id": 1,
+      "name": "The epigenetic basis of cellular heterogeneity"
+    },
     {
       "id": 2,
       "name": "Single-cell epigenomics: techniques and emerging applications"
@@ -14,7 +20,10 @@
       "id": 4,
       "name": "Single-cell multimodal profiling reveals cellular epigenetic heterogeneity"
     },
-    { "id": 5, "name": "Single cell cancer epigenetics" },
+    {
+      "id": 5,
+      "name": "Single cell cancer epigenetics"
+    },
     {
       "id": 6,
       "name": "Multifactorial profiling of epigenetic landscapes at single-cell resolution using MulTI-Tag"
@@ -71,7 +80,10 @@
       "id": 19,
       "name": "Genotyping of Multiple Genomic Loci with Chromatin Accessibility Profiling in Single Cells Links Clonal Hierarchy with Epigenetic Variation in Acute Myeloid Leukemia"
     },
-    { "id": 20, "name": "Epigenetics reloaded: the single-cell revolution" },
+    {
+      "id": 20,
+      "name": "Epigenetics reloaded: the single-cell revolution"
+    },
     {
       "id": 21,
       "name": "Multi-omics profiling of mouse gastrulation at single-cell resolution"
@@ -104,29 +116,95 @@
       "id": 28,
       "name": "Epigenetic evolution and lineage histories of chronic lymphocytic leukaemia"
     },
-    { "id": 29, "name": "Molecular profiling for precision cancer therapies" }
+    {
+      "id": 29,
+      "name": "Molecular profiling for precision cancer therapies"
+    }
   ],
   "links": [
-    { "source": 1, "target": 5 },
-    { "source": 2, "target": 7 },
-    { "source": 2, "target": 16 },
-    { "source": 3, "target": 1 },
-    { "source": 4, "target": 1 },
-    { "source": 4, "target": 5 },
-    { "source": 7, "target": 1 },
-    { "source": 9, "target": 1 },
-    { "source": 9, "target": 21 },
-    { "source": 9, "target": 17 },
-    { "source": 9, "target": 13 },
-    { "source": 9, "target": 25 },
-    { "source": 9, "target": 0 },
-    { "source": 9, "target": 16 },
-    { "source": 9, "target": 4 },
-    { "source": 9, "target": 5 },
-    { "source": 10, "target": 6 },
-    { "source": 10, "target": 5 },
-    { "source": 11, "target": 5 },
-    { "source": 13, "target": 5 },
-    { "source": 17, "target": 5 }
+    {
+      "source": 1,
+      "target": 5
+    },
+    {
+      "source": 2,
+      "target": 7
+    },
+    {
+      "source": 2,
+      "target": 16
+    },
+    {
+      "source": 3,
+      "target": 1
+    },
+    {
+      "source": 4,
+      "target": 1
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 7,
+      "target": 1
+    },
+    {
+      "source": 9,
+      "target": 1
+    },
+    {
+      "source": 9,
+      "target": 21
+    },
+    {
+      "source": 9,
+      "target": 17
+    },
+    {
+      "source": 9,
+      "target": 13
+    },
+    {
+      "source": 9,
+      "target": 25
+    },
+    {
+      "source": 9,
+      "target": 0
+    },
+    {
+      "source": 9,
+      "target": 16
+    },
+    {
+      "source": 9,
+      "target": 4
+    },
+    {
+      "source": 9,
+      "target": 5
+    },
+    {
+      "source": 10,
+      "target": 6
+    },
+    {
+      "source": 10,
+      "target": 5
+    },
+    {
+      "source": 11,
+      "target": 5
+    },
+    {
+      "source": 13,
+      "target": 5
+    },
+    {
+      "source": 17,
+      "target": 5
+    }
   ]
 }

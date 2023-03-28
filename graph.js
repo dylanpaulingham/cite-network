@@ -15,11 +15,11 @@ var networkSvg = d3
     "translate(" + networkMargin.left + "," + networkMargin.top + ")"
   );
 
-d3.json("cites_papers.json", function (data) {
+d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers.json", function (data2) {
   // Initialize the links
   var link = networkSvg
     .selectAll("line")
-    .data(data.links)
+    .data(data2.links)
     .enter()
     .append("line")
     .style("stroke", "#aaa");
@@ -27,15 +27,16 @@ d3.json("cites_papers.json", function (data) {
   // Initialize the nodes
   var node = networkSvg
     .selectAll("circle")
-    .data(data.nodes)
+    .data(data2.nodes)
     .enter()
     .append("circle")
+    .attr("class", "scatter")
     .attr("r", 10)
     .style("fill", "#69b3a2");
 
   // Let's list the force we wanna apply on the network
   var simulation = d3
-    .forceSimulation(data.nodes) // Force algorithm is applied to data.nodes
+    .forceSimulation(data2.nodes) // Force algorithm is applied to data.nodes
     .force(
       "link",
       d3
@@ -43,7 +44,7 @@ d3.json("cites_papers.json", function (data) {
         .id(function (d) {
           return d.id;
         }) // This provide  the id of a node
-        .links(data.links) // and this the list of links
+        .links(data2.links) // and this the list of links
     )
     .force("charge", d3.forceManyBody().strength(-200)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
     .force("center", d3.forceCenter(networkWidth / 2, networkHeight / 2)) // This force attracts nodes to the center of the svg area

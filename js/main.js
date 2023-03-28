@@ -12,7 +12,7 @@ const sc_svg = d3.select("#scatterplot")
   .attr("transform",
     "translate(" + sc_margin.left + "," + sc_margin.top + ")");
 
-d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data/30papers.csv", function (data) {
+d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data/df_papers.csv", function (data) {
 
   // define possible options for axes (numerical columns from csv)
   const allGroup = ["num_authors", "pub_year", "num_citations", "cite_per_year", "page_length", "num_profiled_authors"]
@@ -55,6 +55,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     .data(data)
     .enter()
     .append("circle")
+    .attr("class", "scatter")
     .attr("cx", function (d) { return x(d[allGroup[2]]); })
     .attr("cy", function (d) { return y(d[allGroup[3]]); })
     .attr("r", 6)
@@ -99,7 +100,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     })
 
   // event listeners for points
-  d3.selectAll("circle")
+  d3.selectAll(".scatter circle")
     // highlight point when hovered over
     .on("mouseenter", function (d) {
       const x_axis = d3.select("#Xselect").property("value")
@@ -138,4 +139,3 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     });
 
 });
-
