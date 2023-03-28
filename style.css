@@ -6,6 +6,9 @@ h1 {
     text-align: center;
 }
 
+.spinner {
+    width: 58px;
+}
 .tooltip {
     position: absolute;
     z-index: 9999;
