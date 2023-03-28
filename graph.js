@@ -30,9 +30,37 @@ d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker
     .data(data2.nodes)
     .enter()
     .append("circle")
-    .attr("class", "scatter")
+    .attr("class", "graph")
     .attr("r", 10)
-    .style("fill", "#69b3a2");
+    .style("fill", "#000000")
+    .on("mouseover", function (d) {
+      // change the fill color to red on hover
+      d3.select(this).style("fill", "red");
+
+      // create a tooltip div
+      var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .text(d.name + "\n" + " (" + data2.links.filter(function (l) {
+          return l.source === d || l.target === d;
+        }).length + " links)");
+
+      // position the tooltip near the mouse
+      tooltip.style("left", (d3.event.pageX + 10) + "px")
+        .style("top", (d3.event.pageY - 10) + "px");
+    })
+    .on("mouseout", function (d) {
+      // change the fill color back to steelblue on mouseout
+      d3.select(this).style("fill", "steelblue");
+
+      // remove the tooltip
+      d3.select(".tooltip").remove();
+    });
+
+
+  // node.append("title")
+  //   .text(function (d) { return d.name });
+
+  console.log(node);
 
   // Let's list the force we wanna apply on the network
   var simulation = d3
@@ -68,10 +96,10 @@ d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker
 
     node
       .attr("cx", function (d) {
-        return d.x + 6;
+        return d.x;
       })
       .attr("cy", function (d) {
-        return d.y - 6;
+        return d.y;
       });
   }
 });

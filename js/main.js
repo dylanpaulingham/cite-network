@@ -112,7 +112,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     })
 
   // event listeners for points
-  d3.selectAll(".scatter circle")
+  d3.selectAll(".scatter")
     // highlight point when hovered over
     .on("mouseenter", function (d) {
       const x_axis = d3.select("#Xselect").property("value")
