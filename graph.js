@@ -15,6 +15,20 @@ var networkSvg = d3
     "translate(" + networkMargin.left + "," + networkMargin.top + ")"
   );
 
+// Define the arrowhead marker
+networkSvg.append("defs").selectAll("marker")
+  .data(["arrow"])
+  .enter().append("marker")
+  .attr("id", function (d) { return d; })
+  .attr("viewBox", "0 -5 10 10")
+  .attr("refX", 20)
+  .attr("markerWidth", 8)
+  .attr("markerHeight", 8)
+  .attr("orient", "auto")
+  .append("path")
+  .attr("d", "M10,-5L0,0L10,5");
+
+
 d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers.json", function (data2) {
   // Initialize the links
   var link = networkSvg
@@ -22,7 +36,12 @@ d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker
     .data(data2.links)
     .enter()
     .append("line")
-    .style("stroke", "#aaa");
+    .style("stroke", "#aaa")
+    .attr("marker-end", "url(#arrow)");
+
+
+  var colors = d3.scaleLinear().domain([2, 12])
+    .range(["white", "blue"])
 
   // Initialize the nodes
   var node = networkSvg
@@ -31,26 +50,32 @@ d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker
     .enter()
     .append("circle")
     .attr("class", "graph")
+    .attr("stroke", "black")
+    .attr("stroke-opacity", 0)
+    .attr("stroke-width", 2)
     .attr("r", 10)
-    .style("fill", "#000000")
+    //.attr("r", function (d) { return data2.links.filter(function (l) { return l.source === d.id }).length + 5 })
+    .style("fill", function (d) { return colors(data2.links.filter(function (l) { return l.source === d.id }).length + 3) })
     .on("mouseover", function (d) {
       // change the fill color to red on hover
-      d3.select(this).style("fill", "red");
+      d3.select(this).style("stroke-opacity", 1);
 
       // create a tooltip div
       var tooltip = d3.select("body").append("div")
         .attr("class", "tooltip")
-        .text(d.name + "\n" + " (" + data2.links.filter(function (l) {
-          return l.source === d || l.target === d;
-        }).length + " links)");
+        .text(d.name + "\n" + " (articles in network citing this: " + data2.links.filter(function (l) {
+          return l.source === d;
+        }).length + ")");
 
       // position the tooltip near the mouse
       tooltip.style("left", (d3.event.pageX + 10) + "px")
         .style("top", (d3.event.pageY - 10) + "px");
     })
     .on("mouseout", function (d) {
+      d3.select(this).style("stroke-opacity", 0);
+
       // change the fill color back to steelblue on mouseout
-      d3.select(this).style("fill", "steelblue");
+      //d3.select(this).style("fill", function (d) { return colors(data2.links.filter(function (l) { return l.source === d.id }).length + 3) });
 
       // remove the tooltip
       d3.select(".tooltip").remove();
