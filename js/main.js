@@ -85,17 +85,21 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
       yscale = 1.25;
     }
 
+    // define the format for the year value
+    const formatYear = d3.format(".0f");
+
+
     // update x axis
     const x_min = d3.min(data, function (d) { return +d[selectedX]; });
     const x_max = d3.max(data, function (d) { return +d[selectedX]; });
     x.domain([(x_min / xscale), (x_max * xscale)])
-    xAxis.transition().duration(1000).call(d3.axisBottom(x))
+    xAxis.transition().duration(1000).call(d3.axisBottom(x).tickFormat(formatYear))
 
     // update y axis
     const y_min = d3.min(data, function (d) { return +d[selectedY]; });
     const y_max = d3.max(data, function (d) { return +d[selectedY]; });
     y.domain([(y_min / yscale), (y_max * yscale)])
-    yAxis.transition().duration(1000).call(d3.axisLeft(y))
+    yAxis.transition().duration(1000).call(d3.axisLeft(y).tickFormat(formatYear))
 
     // set spinners to updated axis ranges
     d3.select('#x_min').property('value', Math.round(x_min / xscale));
