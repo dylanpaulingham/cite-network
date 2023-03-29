@@ -21,10 +21,12 @@ networkSvg.append("defs").selectAll("marker")
   .enter().append("marker")
   .attr("id", function (d) { return d; })
   .attr("viewBox", "0 -5 10 10")
-  .attr("refX", 20)
-  .attr("markerWidth", 8)
+  .attr("refX", 13)
+  .attr("markerWidth", 18)
   .attr("markerHeight", 8)
   .attr("orient", "auto")
+  .style("stroke", "blue")
+  .style("opacity", 0.7)
   .append("path")
   .attr("d", "M10,-5L0,0L10,5");
 
@@ -36,7 +38,8 @@ d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker
     .data(data2.links)
     .enter()
     .append("line")
-    .style("stroke", "#aaa")
+    .style("stroke-width", "2")
+    .style("stroke", "black")
     .attr("marker-end", "url(#arrow)");
 
 
