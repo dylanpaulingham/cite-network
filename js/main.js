@@ -34,6 +34,11 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
   const Xmax = d3.max(data, function (d) { return +d[allGroup[2]]; });
   const Ymax = d3.max(data, function (d) { return +d[allGroup[3]]; });
 
+  // set spinners to initial axis ranges
+  d3.selectAll('#x_min, #y_min').property('value', 0);
+  d3.select('#x_max').property('value', Math.round(Xmax * 1.25));
+  d3.select('#y_max').property('value', Math.round(Ymax * 1.25));
+
   // x axis
   const x = d3.scaleLinear()
     .domain([0, (Xmax * 1.25)])
@@ -92,6 +97,12 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     y.domain([(y_min / yscale), (y_max * yscale)])
     yAxis.transition().duration(1000).call(d3.axisLeft(y))
 
+    // set spinners to updated axis ranges
+    d3.select('#x_min').property('value', Math.round(x_min / xscale));
+    d3.select('#x_max').property('value', Math.round(x_max * xscale));
+    d3.select('#y_min').property('value', Math.round(y_min / yscale));
+    d3.select('#y_max').property('value', Math.round(y_max * yscale));
+
     // update points
     sc_svg.selectAll("circle")
       .data(data)
@@ -109,6 +120,51 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
       const selectedX = d3.select("#Xselect").property("value")
       const selectedY = d3.select("#Yselect").property("value")
       updatePlot(selectedX, selectedY)
+    })
+
+  // shift axis (when spinner value is changed)
+  function shiftAxis(x_lower, x_upper, y_lower, y_upper) {
+
+    // prevent flipping or overshrinking of axis
+    if (x_lower >= x_upper) {
+      x_upper = x_lower + 10;
+      d3.select('#x_max').property('value', x_upper);
+    }
+    if (y_lower >= y_upper) {
+      y_upper = y_lower + 10;
+      d3.select('#y_max').property('value', y_upper);
+    }
+
+    // update x axis
+    x.domain([x_lower, x_upper])
+    xAxis.transition().duration(1000).call(d3.axisBottom(x))
+
+    // update y axis
+    y.domain([y_lower, y_upper])
+    yAxis.transition().duration(1000).call(d3.axisLeft(y))
+
+    const selectedX = d3.select("#Xselect").property("value")
+    const selectedY = d3.select("#Yselect").property("value")
+
+    // update points
+    sc_svg.selectAll("circle")
+      .data(data)
+      .transition()
+      .duration(1000)
+      .attr("cx", function (d) { return x(d[selectedX]); })
+      .attr("cy", function (d) { return y(d[selectedY]); })
+
+  }
+
+  // event listener for spinners
+  d3.selectAll(".spinner")
+    // record values from select objects
+    .on("change", function (d) {
+      const x_lower = Number(d3.select("#x_min").property("value"))
+      const x_upper = Number(d3.select("#x_max").property("value"))
+      const y_lower = Number(d3.select("#y_min").property("value"))
+      const y_upper = Number(d3.select("#y_max").property("value"))
+      shiftAxis(x_lower, x_upper, y_lower, y_upper)
     })
 
   // event listeners for points
@@ -131,7 +187,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
         .style("position", "absolute")
         .style("background-color", "white")
         .html('"' + d["title"].slice(0, 20) + '..."<br/>(' + d["venue"] + ")<br/>"
-          + x_axis + ":<b> " + d[x_axis] + "</b><br/>" + y_axis + ":<b> " + d[y_axis] + "</b>");
+          + x_axis + ":<b> " + d[x_axis].substring(0,5) + "</b><br/>" + y_axis + ":<b> " + d[y_axis].substring(0,5) + "</b>");
     })
     // remove highlight on mouseout
     .on("mouseout", function (d) {
