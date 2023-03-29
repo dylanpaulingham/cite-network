@@ -1,3 +1,5 @@
+import { max, min } from 'd3-array';
+
 // set the dimensions and margins of the graph
 const sc_margin = { top: 10, right: 30, bottom: 30, left: 60 },
   sc_width = 460 - sc_margin.left - sc_margin.right,
