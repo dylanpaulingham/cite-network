@@ -6,8 +6,20 @@ h1 {
     text-align: center;
 }
 
+#panel {
+    background-color: LightGray;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 350px;
+    margin-left: 60px;
+}
+
+#chart_title {
+    margin-left: 80px;
+}
+
 .spinner {
-    width: 58px;
+    width: 55px;
 }
 .tooltip {
     position: absolute;

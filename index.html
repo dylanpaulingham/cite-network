@@ -76,24 +76,26 @@
         </p>
     </div>
 
-    <div>
+    <div id="visualizations">
 
         <h2>Visualization</h2>
 
-        <h3 id="chart_title">num_citations vs cite_per_year</h3>
-        <div id="scatterplot"></div>
-        <b>X-Axis: </b><select id="Xselect"></select></br>
-        >> from <input type="number" class="spinner" id="x_min">
-        to <input type="number" class="spinner" id="x_max"></br>
-        <b>Y-Axis: </b><select id="Yselect"></select></br>
-        >> from <input type="number" class="spinner" id="y_min">
-        to <input type="number" class="spinner" id="y_max"></br>
-        <div id="tooltip"></div>
+            <h3 id="chart_title">num_citations vs cite_per_year</h3>
+            <div id="scatterplot"></div>
 
-
-
-        <div id="scatterplot"></div>
-
+            <div id="panel">
+              <b>X-Axis: </b>
+              <select id="Xselect"></select>
+              <br>&nbsp;&nbsp;&nbsp;
+              from: <input type="number" class="spinner" id="x_min">
+              to: <input type="number" class="spinner" id="x_max">
+              <br>
+              <b>Y-Axis: </b>
+              <select id="Yselect"></select>
+              <br>&nbsp;&nbsp;&nbsp;
+              from: <input type="number" class="spinner" id="y_min">
+              to: <input type="number" class="spinner" id="y_max">
+            </div>
 
         <h2>Network</h2>
         <div id="graphencoding"></div>
