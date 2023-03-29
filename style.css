@@ -1,9 +1,7 @@
 body {
     font-family: Arial;
-}
-
-h1 {
-    text-align: center;
+    max-width: 1200px;
+    margin: auto;
 }
 
 #panel {
@@ -14,6 +12,10 @@ h1 {
     margin-left: 60px;
 }
 
+h2, h1 {
+    text-align: center;
+}
+
 #chart_title {
     margin-left: 80px;
 }
@@ -21,6 +23,7 @@ h1 {
 .spinner {
     width: 55px;
 }
+
 .tooltip {
     position: absolute;
     z-index: 9999;
@@ -29,4 +32,28 @@ h1 {
     padding: 5px;
     border: 0px solid #000;
     font-size: 12px;
+}
+
+img {
+    max-width: 30%;
+}
+
+.graph {
+    text-align: center;
+    align-items: center;
+}
+
+#info {
+    max-width: 80%;
+    text-align: center;
+}
+
+#visualizations {
+    max-width: 80%;
+    text-align: center;
+}
+
+#footer {
+    max-width: 80%;
+    text-align: center;
 }

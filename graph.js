@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
 var networkMargin = { top: 10, right: 30, bottom: 30, left: 100 },
   networkWidth = 600 - networkMargin.left - networkMargin.right,
-  networkHeight = 600 - networkMargin.top - networkMargin.bottom;
+  networkHeight = 300 - networkMargin.top - networkMargin.bottom;
 
 // append the svg object to the body of the page
 var networkSvg = d3

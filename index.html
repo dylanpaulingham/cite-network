@@ -12,98 +12,105 @@
 </head>
 
 <body>
-    <h1>
-        Visualizing connections between scientific publications using networks and
-        embeddings
-    </h1>
 
-    <div>
-        <h2>Motivation</h2>
-        <p>
-            This project addresses a situation where students wish to research a new
-            scientific subject by collecting a well-informed list of scientific
-            articles to read through a Google Scholar query.
-        </p>
-        <p>
-            The problem with such a
-            query is that Google Scholar search results are simple and linear,
-            preventing the student from comparing results across content metrics or
-            discovering contextual relations between papers. This means that the
-            students must select papers to read based on less information and
-            considering, potentially reducing the quality and effectiveness of their
-            research.
-        </p>
-        <p>
-            Conversely, since research is the first step in learning a new
-            subject, improving this process could quickly improve a student’s
-            interest and understanding of a novel subject matter. This tool aid in
-            such research by presenting the results of a Google Scholar search in
-            both a network and scatterplot embedding. The resulting scatterplot's axes
-            can be adjusted based on user preference. Also, papers can be
-            clicked on and hovered over to reveal further information such as Authors
-            and Abstract, which can expedite the process of selecting papers for further review.
-        </p>
-    </div>
+    <div id="info">
+        <h1>
+            Visualizing connections between scientific publications using networks and
+            embeddings
+        </h1>
 
-    <div>
-        <h2>Background</h2>
-        <p>
-            This tool visualizes information about the search results of a specific
-            Google Scholar query (in the case of our example visual, the query is
-            “epigenetic profiling in single cells”). This included the title,
-            abstract, number of citations, number of authors, year of publication,
-            venue, and more. Importantly, each paper also has a list of papers that
-            cite it, which is pivotal to creating the citation network
-            visualization. The ordinal metrics are visualized on a
-            scatterplot, with adjustable axes based on user selection.
+        <div>
+            <h2>Motivation</h2>
+            <p>
+                This project addresses a situation where students wish to research a new
+                scientific subject by collecting a well-informed list of scientific
+                articles to read through a Google Scholar query.
+            </p>
+            <p>
+                The problem with such a
+                query is that Google Scholar search results are simple and linear,
+                preventing the student from comparing results across content metrics or
+                discovering contextual relations between papers. This means that the
+                students must select papers to read based on less information and
+                considering, potentially reducing the quality and effectiveness of their
+                research.
+            </p>
+            <p>
+                Conversely, since research is the first step in learning a new
+                subject, improving this process could quickly improve a student’s
+                interest and understanding of a novel subject matter. This tool aid in
+                such research by presenting the results of a Google Scholar search in
+                both a network and scatterplot embedding. The resulting scatterplot's axes
+                can be adjusted based on user preference. Also, papers can be
+                clicked on and hovered over to reveal further information such as Authors
+                and Abstract, which can expedite the process of selecting papers for further review.
+            </p>
+        </div>
 
-        </p>
-        <p> The data was scraped from the Google Scholar webpage using ScholarlyAPI and
-            ScaperAPI. Web scraping is a complicated ethical issue, since most
-            websites do not encourage automatic scraping efforts. We tried to
-            mitigate traffic concerns by using the ScraperAPI, which incorporated
-            automated delays on each query. The data is significantly biased towards
-            Google Scholar’s search algorithm, since we scrape the top 200 search
-            results from that webpage alone.
-        </p>
-        <p>
-            In terms of data quality, some of the
-            venues of publication, such as Nature, have extraneous symbols and
-            characters added to the end of their titles, which need to be removed to
-            show the real name. Also, the page count is in a string format and
-            sometimes includes letters or dashes, so these values need to be removed
-            and cast into integers in order to calculate the page length.
-        </p>
+        <div>
+            <h2>Background</h2>
+            <p>
+                This tool visualizes information about the search results of a specific
+                Google Scholar query (in the case of our example visual, the query is
+                “epigenetic profiling in single cells”). This included the title,
+                abstract, number of citations, number of authors, year of publication,
+                venue, and more. Importantly, each paper also has a list of papers that
+                cite it, which is pivotal to creating the citation network
+                visualization. The ordinal metrics are visualized on a
+                scatterplot, with adjustable axes based on user selection.
+
+            </p>
+            <p> The data was scraped from the Google Scholar webpage using ScholarlyAPI and
+                ScaperAPI. Web scraping is a complicated ethical issue, since most
+                websites do not encourage automatic scraping efforts. We tried to
+                mitigate traffic concerns by using the ScraperAPI, which incorporated
+                automated delays on each query. The data is significantly biased towards
+                Google Scholar’s search algorithm, since we scrape the top 200 search
+                results from that webpage alone.
+            </p>
+            <p>
+                In terms of data quality, some of the
+                venues of publication, such as Nature, have extraneous symbols and
+                characters added to the end of their titles, which need to be removed to
+                show the real name. Also, the page count is in a string format and
+                sometimes includes letters or dashes, so these values need to be removed
+                and cast into integers in order to calculate the page length.
+            </p>
+        </div>
     </div>
 
     <div id="visualizations">
 
-        <h2>Visualization</h2>
+        <h2>Scatterplot</h2>
 
-            <h3 id="chart_title">num_citations vs cite_per_year</h3>
-            <div id="scatterplot"></div>
-            <div id="tooltip"></div>
+        <h3 id="chart_title">num_citations vs cite_per_year</h3>
+        <div id="scatterplot"></div>
+        <div id="tooltip"></div>
 
-            <div id="panel">
-              <b>X-Axis: </b>
-              <select id="Xselect"></select>
-              <br>&nbsp;&nbsp;&nbsp;
-              from: <input type="number" class="spinner" id="x_min">
-              to: <input type="number" class="spinner" id="x_max">
-              <br>
-              <b>Y-Axis: </b>
-              <select id="Yselect"></select>
-              <br>&nbsp;&nbsp;&nbsp;
-              from: <input type="number" class="spinner" id="y_min">
-              to: <input type="number" class="spinner" id="y_max">
-            </div>
+        <div id="panel">
+            <b>X-Axis: </b>
+            <select id="Xselect"></select>
+            <br>&nbsp;&nbsp;&nbsp;
+            from: <input type="number" class="spinner" id="x_min">
+            to: <input type="number" class="spinner" id="x_max">
+            <br>
+            <b>Y-Axis: </b>
+            <select id="Yselect"></select>
+            <br>&nbsp;&nbsp;&nbsp;
+            from: <input type="number" class="spinner" id="y_min">
+            to: <input type="number" class="spinner" id="y_max">
+        </div>
 
-        <h2>Network</h2>
-        <div id="graphencoding"></div>
+        <div id="graph">
+            <h2>Network</h2>
+            <img src="palette.png">
+            <div id="graphencoding"></div>
+        </div>
 
     </div>
+    </div>
 
-    <div>
+    <div id="footer">
         <h2>Acknowledgements</h2>
         <ol>
             <li><a href="https://d3-graph-gallery.com/graph/line_select.html">D3.js Graph Gallery: Line plot with
