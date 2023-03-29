@@ -20,6 +20,20 @@ h2, h1 {
     margin-left: 80px;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#panel {
+  flex: 1;
+}
+
+#scatterplot {
+  flex: 2;
+}
+
 .spinner {
     width: 55px;
 }

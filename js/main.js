@@ -141,11 +141,11 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
 
     // update x axis
     x.domain([x_lower, x_upper])
-    xAxis.transition().duration(1000).call(d3.axisBottom(x))
+    xAxis.transition().duration(1000).call(d3.axisBottom(x).tickFormat(d3.format("d")))
 
     // update y axis
     y.domain([y_lower, y_upper])
-    yAxis.transition().duration(1000).call(d3.axisLeft(y))
+    yAxis.transition().duration(1000).call(d3.axisLeft(y).tickFormat(d3.format("d")))
 
     const selectedX = d3.select("#Xselect").property("value")
     const selectedY = d3.select("#Yselect").property("value")

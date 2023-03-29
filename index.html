@@ -84,22 +84,27 @@
         <h2>Scatterplot</h2>
 
         <h3 id="chart_title">num_citations vs cite_per_year</h3>
-        <div id="scatterplot"></div>
+
+        <div class="container">
+            <div id="panel">
+                <b>X-Axis: </b>
+                <select id="Xselect"></select>
+                <br>&nbsp;&nbsp;&nbsp;
+                from: <input type="number" class="spinner" id="x_min">
+                to: <input type="number" class="spinner" id="x_max">
+                <br>
+                <b>Y-Axis: </b>
+                <select id="Yselect"></select>
+                <br>&nbsp;&nbsp;&nbsp;
+                from: <input type="number" class="spinner" id="y_min">
+                to: <input type="number" class="spinner" id="y_max">
+            </div>
+            <div id="scatterplot"></div>
+    
+        </div>
+
         <div id="tooltip"></div>
 
-        <div id="panel">
-            <b>X-Axis: </b>
-            <select id="Xselect"></select>
-            <br>&nbsp;&nbsp;&nbsp;
-            from: <input type="number" class="spinner" id="x_min">
-            to: <input type="number" class="spinner" id="x_max">
-            <br>
-            <b>Y-Axis: </b>
-            <select id="Yselect"></select>
-            <br>&nbsp;&nbsp;&nbsp;
-            from: <input type="number" class="spinner" id="y_min">
-            to: <input type="number" class="spinner" id="y_max">
-        </div>
 
         <div id="graph">
             <h2>Network</h2>
