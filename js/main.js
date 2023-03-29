@@ -104,7 +104,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     d3.select('#y_max').property('value', Math.round(y_max * yscale));
 
     // update points
-    sc_svg.selectAll("circle")
+    sc_svg.selectAll(".scatter")
       .data(data)
       .transition()
       .duration(1000)
@@ -147,7 +147,7 @@ d3.csv("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-
     const selectedY = d3.select("#Yselect").property("value")
 
     // update points
-    sc_svg.selectAll("circle")
+    sc_svg.selectAll(".scatter")
       .data(data)
       .transition()
       .duration(1000)
