@@ -31,7 +31,7 @@ networkSvg.append("defs").selectAll("marker")
   .attr("d", "M10,-5L0,0L10,5");
 
 
-d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers.json", function (data2) {
+d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers2.json", function (data2) {
   // Initialize the links
   var link = networkSvg
     .selectAll("line")
