@@ -16,10 +16,15 @@ var networkSvg = d3
   );
 
 // Define the arrowhead marker
-networkSvg.append("defs").selectAll("marker")
+networkSvg
+  .append("defs")
+  .selectAll("marker")
   .data(["arrow"])
-  .enter().append("marker")
-  .attr("id", function (d) { return d; })
+  .enter()
+  .append("marker")
+  .attr("id", function (d) {
+    return d;
+  })
   .attr("viewBox", "0 -5 10 10")
   .attr("refX", 13)
   .attr("markerWidth", 18)
@@ -30,107 +35,150 @@ networkSvg.append("defs").selectAll("marker")
   .append("path")
   .attr("d", "M10,-5L0,0L10,5");
 
+d3.json(
+  "https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers2.json",
+  function (data2) {
+    // Initialize the links
+    var link = networkSvg
+      .selectAll("line")
+      .data(data2.links)
+      .enter()
+      .append("line")
+      .style("stroke-width", "2")
+      .style("stroke", "black")
+      .attr("marker-end", "url(#arrow)");
 
-d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers2.json", function (data2) {
-  // Initialize the links
-  var link = networkSvg
-    .selectAll("line")
-    .data(data2.links)
-    .enter()
-    .append("line")
-    .style("stroke-width", "2")
-    .style("stroke", "black")
-    .attr("marker-end", "url(#arrow)");
+    var colors = d3.scaleLinear().domain([2, 12]).range(["white", "blue"]);
 
-
-  var colors = d3.scaleLinear().domain([2, 12])
-    .range(["white", "blue"])
-
-  // Initialize the nodes
-  var node = networkSvg
-    .selectAll("circle")
-    .data(data2.nodes)
-    .enter()
-    .append("circle")
-    .attr("class", "graph")
-    .attr("stroke", "black")
-    .attr("stroke-opacity", 0)
-    .attr("stroke-width", 2)
-    .attr("r", 10)
-    //.attr("r", function (d) { return data2.links.filter(function (l) { return l.source === d.id }).length + 5 })
-    .style("fill", function (d) { return colors(data2.links.filter(function (l) { return l.source === d.id }).length + 3) })
-    .on("mouseover", function (d) {
-      // change the fill color to red on hover
-      d3.select(this).style("stroke-opacity", 1);
-
-      // create a tooltip div
-      var tooltip = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .text(d.name + "\n" + " (articles in network citing this: " + data2.links.filter(function (l) {
-          return l.source === d;
-        }).length + ")");
-
-      // position the tooltip near the mouse
-      tooltip.style("left", (d3.event.pageX + 10) + "px")
-        .style("top", (d3.event.pageY - 10) + "px");
-    })
-    .on("mouseout", function (d) {
-      d3.select(this).style("stroke-opacity", 0);
-
-      // change the fill color back to steelblue on mouseout
-      //d3.select(this).style("fill", function (d) { return colors(data2.links.filter(function (l) { return l.source === d.id }).length + 3) });
-
-      // remove the tooltip
-      d3.select(".tooltip").remove();
-    });
-
-
-  // node.append("title")
-  //   .text(function (d) { return d.name });
-
-  console.log(node);
-
-  // Let's list the force we wanna apply on the network
-  var simulation = d3
-    .forceSimulation(data2.nodes) // Force algorithm is applied to data.nodes
-    .force(
-      "link",
-      d3
-        .forceLink() // This force provides links between nodes
-        .id(function (d) {
-          return d.id;
-        }) // This provide  the id of a node
-        .links(data2.links) // and this the list of links
-    )
-    .force("charge", d3.forceManyBody().strength(-200)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
-    .force("center", d3.forceCenter(networkWidth / 2, networkHeight / 2)) // This force attracts nodes to the center of the svg area
-    .on("end", ticked);
-
-  // This function is run at each iteration of the force algorithm, updating the nodes position.
-  function ticked() {
-    link
-      .attr("x1", function (d) {
-        return d.source.x;
+    // Initialize the nodes
+    var node = networkSvg
+      .selectAll("circle")
+      .data(data2.nodes)
+      .enter()
+      .append("circle")
+      .attr("class", "graph")
+      .attr("stroke", "black")
+      .attr("stroke-opacity", 0)
+      .attr("stroke-width", 2)
+      .attr("r", 10)
+      //.attr("r", function (d) { return data2.links.filter(function (l) { return l.source === d.id }).length + 5 })
+      .style("fill", function (d) {
+        return colors(
+          data2.links.filter(function (l) {
+            return l.source === d.id;
+          }).length + 3
+        );
       })
-      .attr("y1", function (d) {
-        return d.source.y;
+      .on("mouseover", function (d) {
+        // change the fill color to red on hover
+        d3.select(this).style("stroke-opacity", 1);
+
+        // create a tooltip div
+        var tooltip = d3
+          .select("body")
+          .append("div")
+          .attr("class", "tooltip")
+          .text(
+            d.name +
+              "\n" +
+              " (articles in network citing this: " +
+              data2.links.filter(function (l) {
+                return l.source === d;
+              }).length +
+              ")"
+          );
+
+        // position the tooltip near the mouse
+        tooltip
+          .style("left", d3.event.pageX + 10 + "px")
+          .style("top", d3.event.pageY - 10 + "px");
       })
-      .attr("x2", function (d) {
-        return d.target.x;
-      })
-      .attr("y2", function (d) {
-        return d.target.y;
+      .on("mouseout", function (d) {
+        d3.select(this).style("stroke-opacity", 0);
+
+        // change the fill color back to steelblue on mouseout
+        //d3.select(this).style("fill", function (d) { return colors(data2.links.filter(function (l) { return l.source === d.id }).length + 3) });
+
+        // remove the tooltip
+        d3.select(".tooltip").remove();
       });
 
-    node
-      .attr("cx", function (d) {
-        return d.x;
-      })
-      .attr("cy", function (d) {
-        return d.y;
+    // node.append("title")
+    //   .text(function (d) { return d.name });
+
+    console.log(node);
+
+    // Let's list the force we wanna apply on the network
+    var simulation = d3
+      .forceSimulation(data2.nodes) // Force algorithm is applied to data.nodes
+      .force(
+        "link",
+        d3
+          .forceLink() // This force provides links between nodes
+          .id(function (d) {
+            return d.id;
+          }) // This provide  the id of a node
+          .links(data2.links) // and this the list of links
+      )
+      .force("charge", d3.forceManyBody().strength(-200)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("center", d3.forceCenter(networkWidth / 2, networkHeight / 2)) // This force attracts nodes to the center of the svg area
+      .on("end", ticked);
+
+    // This function is run at each iteration of the force algorithm, updating the nodes position.
+    function ticked() {
+      link
+        .attr("x1", function (d) {
+          return d.source.x;
+        })
+        .attr("y1", function (d) {
+          return d.source.y;
+        })
+        .attr("x2", function (d) {
+          return d.target.x;
+        })
+        .attr("y2", function (d) {
+          return d.target.y;
+        });
+
+      node
+        .attr("cx", function (d) {
+          return d.x;
+        })
+        .attr("cy", function (d) {
+          return d.y;
+        });
+    }
+
+    var brushG = networkSvg.append("g").attr("class", "brush");
+
+    var brush = d3
+      .brush()
+      .extent([
+        [0, 0],
+        [networkWidth, networkHeight],
+      ])
+      .on("brush", brushed);
+
+    brushG.call(brush);
+
+    function brushed() {
+      var selection = d3.event.selection;
+
+      // filter the nodes based on the brush selection
+      var filteredNodes = data2.nodes.filter(function (d) {
+        var x = d3.scaleLinear().domain([0, networkWidth]).range(selection)(
+          d.x
+        );
+        return x >= selection[0] && x <= selection[1];
       });
+
+      // set the opacity of the nodes based on the brush selection
+      node.style("opacity", function (d) {
+        return filteredNodes.includes(d) ? 1 : 0.1;
+      });
+    }
   }
-});
+);
 
 //WE HAD VERSION COMPATIBILITY ISSUES, PLEASE IGNORE THIS FOR NOW
 // const networkMargin = { top: 10, right: 30, bottom: 30, left: 170 },
