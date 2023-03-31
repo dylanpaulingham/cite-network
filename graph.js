@@ -149,34 +149,85 @@ d3.json(
         });
     }
 
-    var brushG = networkSvg.append("g").attr("class", "brush");
-
     var brush = d3
       .brush()
       .extent([
         [0, 0],
         [networkWidth, networkHeight],
       ])
-      .on("brush", brushed);
+      .on("brush end", brushed);
 
-    brushG.call(brush);
+    networkSvg.append("g").attr("class", "brush").call(brush);
 
     function brushed() {
-      var selection = d3.event.selection;
-
-      // filter the nodes based on the brush selection
-      var filteredNodes = data2.nodes.filter(function (d) {
-        var x = d3.scaleLinear().domain([0, networkWidth]).range(selection)(
-          d.x
-        );
-        return x >= selection[0] && x <= selection[1];
-      });
-
-      // set the opacity of the nodes based on the brush selection
-      node.style("opacity", function (d) {
-        return filteredNodes.includes(d) ? 1 : 0.1;
-      });
+      var selection = d3.event.selection; // get the brush selection range
+      if (selection) {
+        node.style("fill", function (d) {
+          // update the fill color of the nodes
+          var x = d3
+            .scaleLinear()
+            .domain([0, networkWidth])
+            .range([selection[0][0], selection[1][0]]);
+          var y = d3
+            .scaleLinear()
+            .domain([0, networkHeight])
+            .range([selection[0][1], selection[1][1]]);
+          if (
+            x(d.x) >= selection[0][0] &&
+            x(d.x) <= selection[1][0] &&
+            y(d.y) >= selection[0][1] &&
+            y(d.y) <= selection[1][1]
+          ) {
+            return "red"; // highlight the node if it's within the selection range
+          } else {
+            return colors(
+              data2.links.filter(function (l) {
+                return l.source === d.id;
+              }).length + 3
+            ); // restore the original fill color otherwise
+          }
+        });
+      } else {
+        node.style("fill", function (d) {
+          return colors(
+            data2.links.filter(function (l) {
+              return l.source === d.id;
+            }).length + 3
+          ); // restore the original fill color when the brush is cleared
+        });
+      }
     }
+
+    // var brush = d3
+    //   .brush()
+    //   .extent([
+    //     [0, 0],
+    //     [networkWidth + networkMargin.left, networkHeight],
+    //   ])
+    //   .on("end", brushended);
+
+    // // Initialize the brush
+    // networkSvg.append("g").attr("class", "brush").call(brush);
+
+    // // Function to handle the brush end event
+    // function brushended() {
+    //   // Get the selected nodes
+    //   var selectedNodes = node.filter(function (d) {
+    //     return d3.brushSelection(this);
+    //   });
+
+    //   // Remove the highlight from previously selected nodes
+    //   node.classed("selected", false).style("fill", function (d) {
+    //     return colors(
+    //       data2.links.filter(function (l) {
+    //         return l.source === d.id;
+    //       }).length + 3
+    //     );
+    //   });
+
+    //   // Highlight the selected nodes
+    //   selectedNodes.classed("selected", true).style("fill", "red");
+    // }
   }
 );
 
