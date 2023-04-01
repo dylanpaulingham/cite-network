@@ -30,7 +30,6 @@ networkSvg.append("defs").selectAll("marker")
   .append("path")
   .attr("d", "M10,-5L0,0L10,5");
 
-
 d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers.json", function (data2) {
   // Initialize the links
   var link = networkSvg
@@ -130,7 +129,53 @@ d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker
         return d.y;
       });
   }
+  
+ // Define the zoom behavior
+var zoom = d3.zoom()
+    .scaleExtent([0.5, 4]) // Limit the minimum and maximum zoom levels
+    .on("zoom", zoomed); // Define the zoom event handler
+
+// Call the zoom behavior on the svg element
+svg.call(zoom);
+
+// Define the zoomIn and zoomOut functions
+function zoomIn() {
+  // Get the current transform
+  var transform = d3.zoomTransform(svg.node());
+
+  // Calculate the new scale and translate values
+  var scale = transform.k * 1.1; // Increase the scale by 10%
+  var x = transform.x;
+  var y = transform.y;
+
+  // Apply the new transform
+  svg.transition()
+    .duration(200)
+    .call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(scale));
+}
+
+function zoomOut() {
+  // Get the current transform
+  var transform = d3.zoomTransform(svg.node());
+
+  // Calculate the new scale and translate values
+  var scale = transform.k * 0.9; // Decrease the scale by 10%
+  var x = transform.x;
+  var y = transform.y;
+
+  // Apply the new transform
+  svg.transition()
+    .duration(200)
+    .call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(scale));
+}
+
+// Add click event listeners to the buttons
+d3.select("#zoomInButton").on("click", zoomIn);
+d3.select("#zoomOutButton").on("click", zoomOut);
+
+
 });
+
 
 //WE HAD VERSION COMPATIBILITY ISSUES, PLEASE IGNORE THIS FOR NOW
 // const networkMargin = { top: 10, right: 30, bottom: 30, left: 170 },
