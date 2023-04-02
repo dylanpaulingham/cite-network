@@ -35,17 +35,6 @@ networkSvg
   .append("path")
   .attr("d", "M10,-5L0,0L10,5");
 
-d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers.json", function (data2) {
-  // Initialize the links
-  var link = networkSvg
-    .selectAll("line")
-    .data(data2.links)
-    .enter()
-    .append("line")
-    .style("stroke-width", "2")
-    .style("stroke", "black")
-    .attr("marker-end", "url(#arrow)");
-
 d3.json(
   "https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers2.json",
   function (data2) {
@@ -91,12 +80,12 @@ d3.json(
           .attr("class", "tooltip")
           .text(
             d.name +
-              "\n" +
-              " (articles in network citing this: " +
-              data2.links.filter(function (l) {
-                return l.source === d;
-              }).length +
-              ")"
+            "\n" +
+            " (articles in network citing this: " +
+            data2.links.filter(function (l) {
+              return l.source === d;
+            }).length +
+            ")"
           );
 
         // position the tooltip near the mouse
@@ -160,55 +149,6 @@ d3.json(
         });
     }
 
-    var brush = d3
-      .brush()
-      .extent([
-        [0, 0],
-        [networkWidth, networkHeight],
-      ])
-      .on("brush end", brushed);
-
-    networkSvg.append("g").attr("class", "brush").call(brush);
-
-    function brushed() {
-      var selection = d3.event.selection; // get the brush selection range
-      if (selection) {
-        node.style("fill", function (d) {
-          // update the fill color of the nodes
-          var x = d3
-            .scaleLinear()
-            .domain([0, networkWidth])
-            .range([selection[0][0], selection[1][0]]);
-          var y = d3
-            .scaleLinear()
-            .domain([0, networkHeight])
-            .range([selection[0][1], selection[1][1]]);
-          if (
-            x(d.x) >= selection[0][0] &&
-            x(d.x) <= selection[1][0] &&
-            y(d.y) >= selection[0][1] &&
-            y(d.y) <= selection[1][1]
-          ) {
-            return "red"; // highlight the node if it's within the selection range
-          } else {
-            return colors(
-              data2.links.filter(function (l) {
-                return l.source === d.id;
-              }).length + 3
-            ); // restore the original fill color otherwise
-          }
-        });
-      } else {
-        node.style("fill", function (d) {
-          return colors(
-            data2.links.filter(function (l) {
-              return l.source === d.id;
-            }).length + 3
-          ); // restore the original fill color when the brush is cleared
-        });
-      }
-    }
-
     // var brush = d3
     //   .brush()
     //   .extent([
@@ -242,7 +182,7 @@ d3.json(
   }
 
 
-});
+);
 
 
 //WE HAD VERSION COMPATIBILITY ISSUES, PLEASE IGNORE THIS FOR NOW
