@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-var networkMargin = { top: 10, right: 30, bottom: 30, left: 100 },
-  networkWidth = 600 - networkMargin.left - networkMargin.right,
-  networkHeight = 300 - networkMargin.top - networkMargin.bottom;
+var networkMargin = { top: 0, right: 0, bottom: 0, left: 0 },
+  networkWidth = 1000 - networkMargin.left - networkMargin.right,
+  networkHeight = 1000 - networkMargin.top - networkMargin.bottom;
 
 // append the svg object to the body of the page
 var networkSvg = d3
@@ -36,7 +36,7 @@ networkSvg
   .attr("d", "M10,-5L0,0L10,5");
 
 d3.json(
-  "https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers2.json",
+  "https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data_205.json",
   function (data2) {
     // Initialize the links
     var link = networkSvg
