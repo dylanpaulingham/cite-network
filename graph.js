@@ -46,7 +46,14 @@ d3.json(
       .append("line")
       .style("stroke-width", "2")
       .style("stroke", "black")
-      .attr("marker-end", "url(#arrow)");
+      .attr("marker-end", "url(#arrow)")
+      .on("mouseover", function (d) {
+        // change the fill color to red on hover
+        d3.select(this).style("stroke-width", 4)
+      })
+      .on("mouseout", function (d) {
+        d3.select(this).style("stroke-width", 2)
+      });
 
     var colors = d3.scaleLinear().domain([2, 12]).range(["white", "blue"]);
 
@@ -63,10 +70,10 @@ d3.json(
       .attr("r", 10)
       //.attr("r", function (d) { return data2.links.filter(function (l) { return l.source === d.id }).length + 5 })
       .style("fill", function (d) {
-        return colors(
+        return colors(Math.log(
           data2.links.filter(function (l) {
             return l.source === d.id;
-          }).length + 3
+          }).length + 2) * 5
         );
       })
       .on("mouseover", function (d) {
@@ -120,7 +127,7 @@ d3.json(
           }) // This provide  the id of a node
           .links(data2.links) // and this the list of links
       )
-      .force("charge", d3.forceManyBody().strength(-200)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("charge", d3.forceManyBody().strength(-100)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("center", d3.forceCenter(networkWidth / 2, networkHeight / 2)) // This force attracts nodes to the center of the svg area
       .on("end", ticked);
 
