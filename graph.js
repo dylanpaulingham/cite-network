@@ -16,10 +16,15 @@ var networkSvg = d3
   );
 
 // Define the arrowhead marker
-networkSvg.append("defs").selectAll("marker")
+networkSvg
+  .append("defs")
+  .selectAll("marker")
   .data(["arrow"])
-  .enter().append("marker")
-  .attr("id", function (d) { return d; })
+  .enter()
+  .append("marker")
+  .attr("id", function (d) {
+    return d;
+  })
   .attr("viewBox", "0 -5 10 10")
   .attr("refX", 13)
   .attr("markerWidth", 18)
@@ -41,137 +46,200 @@ d3.json("https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker
     .style("stroke", "black")
     .attr("marker-end", "url(#arrow)");
 
+d3.json(
+  "https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/cites_papers2.json",
+  function (data2) {
+    // Initialize the links
+    var link = networkSvg
+      .selectAll("line")
+      .data(data2.links)
+      .enter()
+      .append("line")
+      .style("stroke-width", "2")
+      .style("stroke", "black")
+      .attr("marker-end", "url(#arrow)");
 
-  var colors = d3.scaleLinear().domain([2, 12])
-    .range(["white", "blue"])
+    var colors = d3.scaleLinear().domain([2, 12]).range(["white", "blue"]);
 
-  // Initialize the nodes
-  var node = networkSvg
-    .selectAll("circle")
-    .data(data2.nodes)
-    .enter()
-    .append("circle")
-    .attr("class", "graph")
-    .attr("stroke", "black")
-    .attr("stroke-opacity", 0)
-    .attr("stroke-width", 2)
-    .attr("r", 10)
-    //.attr("r", function (d) { return data2.links.filter(function (l) { return l.source === d.id }).length + 5 })
-    .style("fill", function (d) { return colors(data2.links.filter(function (l) { return l.source === d.id }).length + 3) })
-    .on("mouseover", function (d) {
-      // change the fill color to red on hover
-      d3.select(this).style("stroke-opacity", 1);
-
-      // create a tooltip div
-      var tooltip = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .text(d.name + "\n" + " (articles in network citing this: " + data2.links.filter(function (l) {
-          return l.source === d;
-        }).length + ")");
-
-      // position the tooltip near the mouse
-      tooltip.style("left", (d3.event.pageX + 10) + "px")
-        .style("top", (d3.event.pageY - 10) + "px");
-    })
-    .on("mouseout", function (d) {
-      d3.select(this).style("stroke-opacity", 0);
-
-      // change the fill color back to steelblue on mouseout
-      //d3.select(this).style("fill", function (d) { return colors(data2.links.filter(function (l) { return l.source === d.id }).length + 3) });
-
-      // remove the tooltip
-      d3.select(".tooltip").remove();
-    });
-
-
-  // node.append("title")
-  //   .text(function (d) { return d.name });
-
-  console.log(node);
-
-  // Let's list the force we wanna apply on the network
-  var simulation = d3
-    .forceSimulation(data2.nodes) // Force algorithm is applied to data.nodes
-    .force(
-      "link",
-      d3
-        .forceLink() // This force provides links between nodes
-        .id(function (d) {
-          return d.id;
-        }) // This provide  the id of a node
-        .links(data2.links) // and this the list of links
-    )
-    .force("charge", d3.forceManyBody().strength(-200)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
-    .force("center", d3.forceCenter(networkWidth / 2, networkHeight / 2)) // This force attracts nodes to the center of the svg area
-    .on("end", ticked);
-
-  // This function is run at each iteration of the force algorithm, updating the nodes position.
-  function ticked() {
-    link
-      .attr("x1", function (d) {
-        return d.source.x;
+    // Initialize the nodes
+    var node = networkSvg
+      .selectAll("circle")
+      .data(data2.nodes)
+      .enter()
+      .append("circle")
+      .attr("class", "graph")
+      .attr("stroke", "black")
+      .attr("stroke-opacity", 0)
+      .attr("stroke-width", 2)
+      .attr("r", 10)
+      //.attr("r", function (d) { return data2.links.filter(function (l) { return l.source === d.id }).length + 5 })
+      .style("fill", function (d) {
+        return colors(
+          data2.links.filter(function (l) {
+            return l.source === d.id;
+          }).length + 3
+        );
       })
-      .attr("y1", function (d) {
-        return d.source.y;
+      .on("mouseover", function (d) {
+        // change the fill color to red on hover
+        d3.select(this).style("stroke-opacity", 1);
+
+        // create a tooltip div
+        var tooltip = d3
+          .select("body")
+          .append("div")
+          .attr("class", "tooltip")
+          .text(
+            d.name +
+              "\n" +
+              " (articles in network citing this: " +
+              data2.links.filter(function (l) {
+                return l.source === d;
+              }).length +
+              ")"
+          );
+
+        // position the tooltip near the mouse
+        tooltip
+          .style("left", d3.event.pageX + 10 + "px")
+          .style("top", d3.event.pageY - 10 + "px");
       })
-      .attr("x2", function (d) {
-        return d.target.x;
-      })
-      .attr("y2", function (d) {
-        return d.target.y;
+      .on("mouseout", function (d) {
+        d3.select(this).style("stroke-opacity", 0);
+
+        // change the fill color back to steelblue on mouseout
+        //d3.select(this).style("fill", function (d) { return colors(data2.links.filter(function (l) { return l.source === d.id }).length + 3) });
+
+        // remove the tooltip
+        d3.select(".tooltip").remove();
       });
 
-    node
-      .attr("cx", function (d) {
-        return d.x;
-      })
-      .attr("cy", function (d) {
-        return d.y;
-      });
+    // node.append("title")
+    //   .text(function (d) { return d.name });
+
+    console.log(node);
+
+    // Let's list the force we wanna apply on the network
+    var simulation = d3
+      .forceSimulation(data2.nodes) // Force algorithm is applied to data.nodes
+      .force(
+        "link",
+        d3
+          .forceLink() // This force provides links between nodes
+          .id(function (d) {
+            return d.id;
+          }) // This provide  the id of a node
+          .links(data2.links) // and this the list of links
+      )
+      .force("charge", d3.forceManyBody().strength(-200)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("center", d3.forceCenter(networkWidth / 2, networkHeight / 2)) // This force attracts nodes to the center of the svg area
+      .on("end", ticked);
+
+    // This function is run at each iteration of the force algorithm, updating the nodes position.
+    function ticked() {
+      link
+        .attr("x1", function (d) {
+          return d.source.x;
+        })
+        .attr("y1", function (d) {
+          return d.source.y;
+        })
+        .attr("x2", function (d) {
+          return d.target.x;
+        })
+        .attr("y2", function (d) {
+          return d.target.y;
+        });
+
+      node
+        .attr("cx", function (d) {
+          return d.x;
+        })
+        .attr("cy", function (d) {
+          return d.y;
+        });
+    }
+
+    var brush = d3
+      .brush()
+      .extent([
+        [0, 0],
+        [networkWidth, networkHeight],
+      ])
+      .on("brush end", brushed);
+
+    networkSvg.append("g").attr("class", "brush").call(brush);
+
+    function brushed() {
+      var selection = d3.event.selection; // get the brush selection range
+      if (selection) {
+        node.style("fill", function (d) {
+          // update the fill color of the nodes
+          var x = d3
+            .scaleLinear()
+            .domain([0, networkWidth])
+            .range([selection[0][0], selection[1][0]]);
+          var y = d3
+            .scaleLinear()
+            .domain([0, networkHeight])
+            .range([selection[0][1], selection[1][1]]);
+          if (
+            x(d.x) >= selection[0][0] &&
+            x(d.x) <= selection[1][0] &&
+            y(d.y) >= selection[0][1] &&
+            y(d.y) <= selection[1][1]
+          ) {
+            return "red"; // highlight the node if it's within the selection range
+          } else {
+            return colors(
+              data2.links.filter(function (l) {
+                return l.source === d.id;
+              }).length + 3
+            ); // restore the original fill color otherwise
+          }
+        });
+      } else {
+        node.style("fill", function (d) {
+          return colors(
+            data2.links.filter(function (l) {
+              return l.source === d.id;
+            }).length + 3
+          ); // restore the original fill color when the brush is cleared
+        });
+      }
+    }
+
+    // var brush = d3
+    //   .brush()
+    //   .extent([
+    //     [0, 0],
+    //     [networkWidth + networkMargin.left, networkHeight],
+    //   ])
+    //   .on("end", brushended);
+
+    // // Initialize the brush
+    // networkSvg.append("g").attr("class", "brush").call(brush);
+
+    // // Function to handle the brush end event
+    // function brushended() {
+    //   // Get the selected nodes
+    //   var selectedNodes = node.filter(function (d) {
+    //     return d3.brushSelection(this);
+    //   });
+
+    //   // Remove the highlight from previously selected nodes
+    //   node.classed("selected", false).style("fill", function (d) {
+    //     return colors(
+    //       data2.links.filter(function (l) {
+    //         return l.source === d.id;
+    //       }).length + 3
+    //     );
+    //   });
+
+    //   // Highlight the selected nodes
+    //   selectedNodes.classed("selected", true).style("fill", "red");
+    // }
   }
-  
- // Define the zoom behavior
-var zoom = d3.zoom()
-    .scaleExtent([0.5, 4]) // Limit the minimum and maximum zoom levels
-    .on("zoom", zoomed); // Define the zoom event handler
-
-// Call the zoom behavior on the svg element
-svg.call(zoom);
-
-// Define the zoomIn and zoomOut functions
-function zoomIn() {
-  // Get the current transform
-  var transform = d3.zoomTransform(svg.node());
-
-  // Calculate the new scale and translate values
-  var scale = transform.k * 1.1; // Increase the scale by 10%
-  var x = transform.x;
-  var y = transform.y;
-
-  // Apply the new transform
-  svg.transition()
-    .duration(200)
-    .call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(scale));
-}
-
-function zoomOut() {
-  // Get the current transform
-  var transform = d3.zoomTransform(svg.node());
-
-  // Calculate the new scale and translate values
-  var scale = transform.k * 0.9; // Decrease the scale by 10%
-  var x = transform.x;
-  var y = transform.y;
-
-  // Apply the new transform
-  svg.transition()
-    .duration(200)
-    .call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(scale));
-}
-
-// Add click event listeners to the buttons
-d3.select("#zoomInButton").on("click", zoomIn);
-d3.select("#zoomOutButton").on("click", zoomOut);
 
 
 });
