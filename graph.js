@@ -113,7 +113,7 @@ d3.json(
       });
 
     // node.append("title")
-    //   .text(function (d) { return d.name });
+    //   .text(function (d) { return d.title });
 
     console.log(node);
 
