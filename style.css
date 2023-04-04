@@ -2,6 +2,9 @@ body {
   font-family: Arial;
   max-width: 1200px;
   margin: auto;
+  padding: 1rem;
+  background-color: #dfe6e9;
+  align-items: center;
 }
 
 #panel {
@@ -21,11 +24,51 @@ h1 {
   margin-left: 80px;
 }
 
-.container {
+.flex-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.read-more-container {
+  display: flex; 
+  flex-direction: row;
+  color: black;
+  gap: 1rem;
+
+}
+
+.vis-container {
+  display: flex;
+  flex-direction: row;
+  background-color: ghostwhite;
+  padding:2rem;
+  box-shadow: 0 0 1rem rgba(0,0,0,.1);
+  margin: auto;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.container {
+  line-height: 1.4rem;
+  border-radius: 2px;
+  padding:2rem;
+  background-color: ghostwhite;
+  box-shadow: 0 0 1rem rgba(0,0,0,.1);
+}
+
+.read-more-btn {
+  color: blue;
+}
+
+.read-more-text {
+  display: none;
+}
+
+.read-more-text--show {
+  display: inline;
+}
+
 #panel {
   flex: 1;
 }
