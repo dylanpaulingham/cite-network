@@ -254,9 +254,6 @@ const scatterdata = d3.csv(
         d3.select(this)
           .attr("title", d.amount)
           .style("cursor", "pointer")
-          .style("fill-opacity", 1)
-          .style("fill", "#0000ff");
-        // add tooltip with information on point
         d3.select("#tooltip")
           .style("max-width", "250px")
           .style("font-size", "12px")
@@ -286,10 +283,23 @@ const scatterdata = d3.csv(
           .attr("title", d.amount)
           .style("cursor", "default")
           .style("fill-opacity", 0.5)
-          .style("fill", "#a6a6ff");
         d3.select("#tooltip").style("left", "-9999px").style("top", "-9999px");
       })
       .on("click", function (d) {
+
+
+
+        // Get the current fill color of the circle
+        const fillColor = d3.select(this).style("fill");
+
+        // Toggle the opacity between 0 and 1
+        const newColor = fillColor === "#CD4546" ? "#0000ff" : "#CD4546";
+
+        // Update the stroke opacity of the circle
+        d3.select(this).style("fill", newColor);
+
+
+
         d3.select("#tooltip").html(
           "<i>" +
           d["venue"] +
@@ -378,7 +388,7 @@ const graphdata = d3.json(
       .append("circle")
       .attr("class", "graph")
       .attr("id", function (d) { return d.title })
-      .attr("stroke", "black")
+      .attr("stroke", "coral")
       .attr("stroke-opacity", 0)
       .attr("stroke-width", 2)
       .attr("r", 10)
@@ -409,7 +419,7 @@ const graphdata = d3.json(
 
         if (newOpacity === "1") {
           // highlight the corresponding circle in the scatterplot
-          scatterData2.attr("stroke", "black").attr("stroke-width", 4);
+          scatterData2.attr("stroke", "coral").attr("stroke-width", 4).style("fill", "#coral");
 
           const x_axis = d3.select("#Xselect").property("value");
           const y_axis = d3.select("#Yselect").property("value");
@@ -418,7 +428,6 @@ const graphdata = d3.json(
             .attr("title", scatterData2._groups[0][0].__data__.title)
             .style("cursor", "pointer")
             .style("fill-opacity", 1)
-            .style("fill", "crimson");
           // add tooltip with information on point
           d3.select("#tooltip")
             .style("max-width", "250px")
