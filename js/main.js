@@ -47,7 +47,7 @@ const scatterdata = d3.csv(
       "num_citations": "Number of Citations",
       "cite_per_year": "Citations per Year",
       "page_length": "Page Length",
-      "num_profiled_authors": "Number of Profiles",
+      "num_profiled_authors": "Number of Profiled Authors",
     };
 
     // append options to dropdown
