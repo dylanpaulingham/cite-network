@@ -113,8 +113,8 @@ const scatterdata = d3.csv(
         return y(d[allGroup[3]]);
       })
       .attr("r", 6)
-      .attr("fill-opacity", 0.5)
-      .attr("fill", "blue");
+      .attr("fill-opacity", 0.75)
+      .attr("fill", "#8181ff");
 
     // update plot (when dropdown value is changed)
     function updatePlot(selectedX, selectedY) {
@@ -255,7 +255,7 @@ const scatterdata = d3.csv(
           .attr("title", d.amount)
           .style("cursor", "pointer")
           .style("fill-opacity", 1)
-          .style("fill", "crimson");
+          .style("fill", "#0000ff");
         // add tooltip with information on point
         d3.select("#tooltip")
           .style("max-width", "250px")
@@ -286,7 +286,7 @@ const scatterdata = d3.csv(
           .attr("title", d.amount)
           .style("cursor", "default")
           .style("fill-opacity", 0.5)
-          .style("fill", "coral");
+          .style("fill", "#a6a6ff");
         d3.select("#tooltip").style("left", "-9999px").style("top", "-9999px");
       })
       .on("click", function (d) {
