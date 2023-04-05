@@ -159,31 +159,6 @@ d3.json(
         });
     }
 
-  const svg = d3.select("#graphencoding");
-  const zoomBehavior = d3.zoom()
-  .scaleExtent([0.1, 10])
-    .on("zoom", () => {
-    // call a function to update the network graph with the new zoom transform
-      updateNetworkGraph(d3.event.transform);
-  });
-  svg.call(zoomBehavior);
-
-  function updateNetworkGraph(transform) {
-    const networkGraphElements = document.querySelectorAll("$graphencoding");
-    networkGraphElements.forEach((element) => {
-      element.style.transform = `translate(${transform.x}px, ${transform.y}px) scale(${transform.k})`;
-    });
-  }
-
-  const zoomInBtn = document.getElementById("zoomInBtn");
-  zoomInBtn.addEventListener("click", () => {
-    zoomBehavior.scaleBy(svg.transition().duration(500), 1.2);
-});
-
-  const zoomOutBtn = document.getElementById("zoomOutBtn");
-  zoomOutBtn.addEventListener("click", () => {
-    zoomBehavior.scaleBy(svg.transition().duration(500), 0.8);
-});
 
     // var brush = d3
     //   .brush()
