@@ -14,7 +14,8 @@
 
     <div class="read-more-container">
         <div class="container">
-            <h1> Visualizing connections between scientific publications using networks and embeddings </h1>
+            <h1>Visualizing connections between scientific publications using networks and embeddings</h1>
+            <p class="author">Dylan Ingham, Parker Brandt, Ethan Waple, Jaeson Pyeon, Ryan Costa</p>
         </div>
         <div class="container">
             <h2>Motivation</h2>
@@ -92,7 +93,6 @@
                 to: <input type="number" class="spinner" id="y_max">
             </div>
             <div id="scatterplot"></div>
-
         </div>
 
         <div id="tooltip"></div>
@@ -105,21 +105,21 @@
                     <img src="cites.png">
                 </div>
                 <div id="graphencoding"></div>
-                <button id="zoom-in">+</button>
-                <button id="zoom-out">-</button>
-
 
             </div>
+            <button id="zoomInBtn">+</button>
+            <button id="zoomOutBtn">-</button>
         </div>
     </div>
     </div>
 
     <div id="footer">
         <h2>Link to Data</h2>
+        <div class="container">
         <a
             href="https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data_205.json">tits</a>
         <a href=""></a>
-
+        </div>
         <h2>Acknowledgements</h2>
         <div class="container">
             <ol>
