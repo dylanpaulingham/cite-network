@@ -41,6 +41,15 @@ const scatterdata = d3.csv(
       "num_profiled_authors",
     ];
 
+    const allGroup2 = {
+      "num_authors": "Number of Authors",
+      "pub_year": "Publication Year",
+      "num_citations": "Number of Citations",
+      "cite_per_year": "Citations per Year",
+      "page_length": "Page Length",
+      "num_profiled_authors": "Number of Profiles",
+    };
+
     // append options to dropdown
     d3.selectAll("#Xselect, #Yselect")
       .selectAll("myOptions")
@@ -48,7 +57,7 @@ const scatterdata = d3.csv(
       .enter()
       .append("option")
       .text(function (d) {
-        return d;
+        return allGroup2[d];
       }) // update dropdown text
       .attr("value", function (d) {
         return d;
@@ -110,7 +119,7 @@ const scatterdata = d3.csv(
     // update plot (when dropdown value is changed)
     function updatePlot(selectedX, selectedY) {
       // update title
-      d3.select("#chart_title").text(selectedX + " vs " + selectedY);
+      d3.select("#chart_title").text(allGroup2[selectedX] + " vs " + allGroup2[selectedY]);
 
       let xscale, yscale;
       if (selectedX === "pub_year") {
@@ -290,6 +299,12 @@ const scatterdata = d3.csv(
           '"</b><br/><b>Abstract:</b> ' +
           d["abstract"]
         );
+        d3.select("#titleFill")
+          .text(function () {
+            return d.title;
+          });
+
+
       });
   }
 );
@@ -297,12 +312,12 @@ const scatterdata = d3.csv(
 //_______________________________
 
 // set the dimensions and margins of the graph
-var networkMargin = { top: 65, right: 30, bottom: 30, left: 60 },
+const networkMargin = { top: 65, right: 30, bottom: 30, left: 60 },
   networkWidth = 800 - networkMargin.left - networkMargin.right,
   networkHeight = 700 - networkMargin.top - networkMargin.bottom;
 
 // append the svg object to the body of the page
-var networkSvg = d3
+const networkSvg = d3
   .select("#graphencoding")
   .append("svg")
   .attr("width", networkWidth + networkMargin.left + networkMargin.right)
@@ -337,7 +352,7 @@ const graphdata = d3.json(
   "https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data_205.json",
   function (data2) {
     // Initialize the links
-    var links = networkSvg
+    const links = networkSvg
       .selectAll("line")
       .data(data2.links)
       .enter()
@@ -347,16 +362,16 @@ const graphdata = d3.json(
       .attr("marker-end", "url(#arrow)")
       .on("mouseover", function (d) {
         // change the fill color to red on hover
-        d3.select(this).style("stroke", "red").style("stroke-wdth", "4");
+        d3.select(this).style("stroke", "coral").style("stroke-wdth", "4");
       })
       .on("mouseout", function (d) {
         d3.select(this).style("stroke", "black").style("stroke-wdth", "2");
       });
 
-    var colors = d3.scaleLinear().domain([2, 12]).range(["white", "blue"]);
+    const colors = d3.scaleLinear().domain([2, 12]).range(["white", "blue"]);
 
     // Initialize the nodes
-    var nodes = networkSvg
+    const nodes = networkSvg
       .selectAll("circle")
       .data(data2.nodes)
       .enter()
@@ -367,7 +382,6 @@ const graphdata = d3.json(
       .attr("stroke-opacity", 0)
       .attr("stroke-width", 2)
       .attr("r", 10)
-      //.attr("r", function (d) { return data2.links.filter(function (l) { return l.source === d.id }).length + 5 })
       .style("fill", function (d) {
         return colors(
           Math.log(
@@ -399,9 +413,6 @@ const graphdata = d3.json(
 
           const x_axis = d3.select("#Xselect").property("value");
           const y_axis = d3.select("#Yselect").property("value");
-
-          console.log(scatterData2._groups[0][0].__data__[y_axis]);
-          console.log(typeof (y_axis));
 
           d3.select(scatterData2._groups[0][0])
             .attr("title", scatterData2._groups[0][0].__data__.title)
@@ -436,37 +447,15 @@ const graphdata = d3.json(
           scatterData2.attr("stroke", null).attr("stroke-width", null);
         }
 
+        d3.select("#titleFill2")
+          .text(function () {
+            return d.title;
+          });
+
       })
-    // .on("mouseover", function (d) {
-    //   // create a tooltip div
-    //   var tooltip = d3
-    //     .select("body")
-    //     .append("div")
-    //     .attr("class", "tooltip")
-    //     .text(
-    //       d.title +
-    //       "\n" +
-    //       " (articles in network citing this: " +
-    //       data2.links.filter(function (l) {
-    //         return l.source === d;
-    //       }).length +
-    //       ")"
-    //     );
 
-    //   // position the tooltip near the mouse
-    //   tooltip
-    //     .style("left", d3.event.pageX + 10 + "px")
-    //     .style("top", d3.event.pageY - 10 + "px");
-    // })
-    // .on("mouseout", function (d) {
-    //   d3.select(".tooltip").remove();
-    // });
-
-    // node.append("title")
-    //   .text(function (d) { return d.title });
-
-    // Let's list the force we wanna apply on the network
-    var simulation = d3
+    // List the forces to apply on the network
+    const simulation = d3
       .forceSimulation(data2.nodes) // Force algorithm is applied to data.nodes
       .force(
         "link",
@@ -480,29 +469,6 @@ const graphdata = d3.json(
       .force("charge", d3.forceManyBody().strength(-120)) // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("center", d3.forceCenter(80, 80)) // This force attracts nodes to the center of the svg area
       .on("end", ticked);
-
-    // // console.log(d3.selectAll(".graph"));
-    // d3.selectAll(".graph")
-    //   .on("mouseover", function (d) {
-
-    //     // get the corresponding paper in the scatterplot visualization
-    //     const scatterData2 = d3.selectAll(".scatter").filter(function (p) {
-    //       return p.title == d.title;
-    //     });
-
-    //     // highlight the corresponding circle in the scatterplot
-    //     scatterData2.attr("stroke", "black").attr("stroke-width", 4);
-
-    //   })
-    //   .on("mouseout", function (d) {
-    //     // get the corresponding paper in the scatterplot visualization
-    //     const scatterData2 = d3.selectAll("circle").filter(function (p) {
-    //       return p.id === d.id;
-    //     });
-
-    //     // remove the highlight from the corresponding circle in the scatterplot
-    //     scatterData2.attr("stroke", null).attr("stroke-width", null);
-    //   });
 
     // This function is run at each iteration of the force algorithm, updating the nodes position.
     function ticked() {
@@ -528,64 +494,5 @@ const graphdata = d3.json(
           return d.y;
         });
     }
-
-
-
-
-    // // event listeners for points
-    // d3.selectAll(".graph")
-    //   // highlight point when hovered over
-    //   .on("mouseenter", function (d) {
-    //     const x_axis = d3.select("#Xselect").property("value");
-    //     const y_axis = d3.select("#Yselect").property("value");
-    //     d3.select(this)
-    //       .attr("title", d.title)
-    //       .style("cursor", "pointer")
-    //       .style("fill-opacity", 1)
-    //       .style("fill", "crimson");
-    //     // add tooltip with information on point
-    //     d3.select("#tooltip")
-    //       .style("max-width", "250px")
-    //       .style("font-size", "12px")
-    //       .style("left", d3.event.pageX + 12 + "px")
-    //       .style("top", d3.event.pageY - 12 + "px")
-    //       .style("position", "absolute")
-    //       .style("background-color", "white")
-    //       .html(
-    //         '"' +
-    //         d["title"].slice(0, 20) +
-    //         '..."<br/>(' +
-    //         d["venue"] +
-    //         ")<br/>" +
-    //         x_axis +
-    //         ":<b> " +
-    //         d[x_axis].substring(0, 5) +
-    //         "</b><br/>" +
-    //         y_axis +
-    //         ":<b> " +
-    //         d[y_axis].substring(0, 5) +
-    //         "</b>"
-    //       );
-    //   })
-    //   // remove highlight on mouseout
-    //   .on("mouseout", function (d) {
-    //     d3.select(this)
-    //       .attr("title", d.title)
-    //       .style("cursor", "default")
-    //       .style("fill-opacity", 0.5)
-    //       .style("fill", "coral");
-    //     d3.select("#tooltip").style("left", "-9999px").style("top", "-9999px");
-    //   })
-    //   .on("click", function (d) {
-    //     d3.select("#tooltip").html(
-    //       "<i>" +
-    //       d["venue"] +
-    //       "</i><br/>" +
-    //       '<b>"' +
-    //       d["title"] +
-    //       '"</b><br/><b>Abstract:</b> ' +
-    //       d["abstract"]
-    //     );
-    //   });
   }
 );

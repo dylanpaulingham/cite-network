@@ -14,11 +14,10 @@
 
     <div class="read-more-container">
         <div class="container">
-            <h1>Visualizing connections between scientific publications using networks and embeddings</h1>
-            <p class="author">Dylan Ingham, Parker Brandt, Ethan Waple, Jaeson Pyeon, Ryan Costa</p>
+            <h1> Visualizing connections between scientific publications using networks and embeddings </h1>
         </div>
         <div class="container">
-            <h2>Motivation</h2>
+            <h3>Motivation</h3>
             <p>
                 This project addresses a situation where students wish to research a new
                 scientific subject by collecting a well-informed list of scientific
@@ -45,7 +44,7 @@
             <span class="read-more-btn">Read More...</span>
         </div>
         <div class="container">
-            <h2>Background</h2>
+            <h3>Background</h3>
             <p>
                 This tool visualizes information about the search results of a specific Google Scholar query (in the
                 case of our example visual, the query is “epigenetic profiling in single cells”). This included the
@@ -76,49 +75,76 @@
     <div id="visualizations">
         <h2>Scatterplot</h2>
 
-        <div class="vis-container">
+        <div class="container">
+            <div class="vis-container">
 
-            <h3 id="chart_title">num_citations vs cite_per_year</h3>
-            <div id="panel">
-                <b>X-Axis: </b>
-                <select id="Xselect"></select>
-                <br>&nbsp;&nbsp;&nbsp;
-                from: <input type="number" class="spinner" id="x_min">
-                to: <input type="number" class="spinner" id="x_max">
-                <br>
-                <b>Y-Axis: </b>
-                <select id="Yselect"></select>
-                <br>&nbsp;&nbsp;&nbsp;
-                from: <input type="number" class="spinner" id="y_min">
-                to: <input type="number" class="spinner" id="y_max">
+                <h3 id="chart_title">Number of Citations vs Citations per Year</h3>
+                <div id="panel">
+                    <b>X-Axis: </b>
+                    <select id="Xselect"></select>
+                    <br>&nbsp;&nbsp;&nbsp;
+                    from: <input type="number" class="spinner" id="x_min">
+                    to: <input type="number" class="spinner" id="x_max">
+                    <br>
+                    <b>Y-Axis: </b>
+                    <select id="Yselect"></select>
+                    <br>&nbsp;&nbsp;&nbsp;
+                    from: <input type="number" class="spinner" id="y_min">
+                    to: <input type="number" class="spinner" id="y_max">
+                </div>
+
+                <div id="scatterplot"></div>
             </div>
-            <div id="scatterplot"></div>
+            <div class="container">
+                <div>
+                    <U>Last Selected Paper</U>
+                </div>
+                <div id="titleFill"></div>
+            </div>
         </div>
+
 
         <div id="tooltip"></div>
 
         <h2>Network</h2>
-        <div class="graph-container">
-            <div id="graph">
-                <div class="images">
-                    <img class="grad" src="gradient.png">
-                    <img src="cites.png">
+        <div class="container">
+
+            <div class="graph-container">
+                <div id="graph">
+                    <div class="images">
+                        <img class="grad" src="gradient.png">
+                        <img src="cites.png">
+                    </div>
+                    <div id="graphencoding"></div>
                 </div>
-                <div id="graphencoding"></div>
             </div>
+            <div class="container">
+                <div>
+                    <U>Last Selected Paper</U>
+                </div>
+                <div id="titleFill2"></div>
+            </div>
+
+
         </div>
     </div>
     </div>
 
     <div id="footer">
-        <h2>Link to Data</h2>
+        <h2 class="lower"> Links to Data</h2>
         <div class="container">
-            <ol>
-                <li><a href="https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data_205.json">tits</a></li>
-                <li><a href="">l2</a></li>
-            </ol>
+            <a
+                href="https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/df_papers_205.csv">CSV
+                File</a>
+            <a
+                href="https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data_205.json">JSON
+                File</a>
         </div>
-        <h2>Acknowledgements</h2>
+
+    </div>
+
+    <div id="footer">
+        <h2 class="lower">Acknowledgements</h2>
         <div class="container">
             <ol>
                 <li><a href="https://d3-graph-gallery.com/graph/line_select.html">D3.js Graph Gallery: Line plot with
