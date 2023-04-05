@@ -105,7 +105,7 @@ const scatterdata = d3.csv(
       })
       .attr("r", 6)
       .attr("fill-opacity", 0.75)
-      .attr("fill", "#7f7fff");
+      .attr("fill", "#8181ff");
 
     // update plot (when dropdown value is changed)
     function updatePlot(selectedX, selectedY) {
@@ -276,8 +276,8 @@ const scatterdata = d3.csv(
         d3.select(this)
           .attr("title", d.amount)
           .style("cursor", "default")
-          .style("fill-opacity", 0.75)
-          .style("fill", "#dad9ff");
+          .style("fill-opacity", 0.5)
+          .style("fill", "#a6a6ff");
         d3.select("#tooltip").style("left", "-9999px").style("top", "-9999px");
       })
       .on("click", function (d) {
