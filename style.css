@@ -31,7 +31,7 @@ h1 {
 }
 
 .read-more-container {
-  display: flex; 
+  display: flex;
   flex-direction: row;
   color: black;
   gap: 1rem;
@@ -42,8 +42,8 @@ h1 {
   display: flex;
   flex-direction: row;
   background-color: ghostwhite;
-  padding:2rem;
-  box-shadow: 0 0 1rem rgba(0,0,0,.1);
+  padding: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
   margin: auto;
   width: 100%;
   flex-wrap: wrap;
@@ -52,9 +52,9 @@ h1 {
 .container {
   line-height: 1.4rem;
   border-radius: 2px;
-  padding:2rem;
+  padding: 2rem;
   background-color: ghostwhite;
-  box-shadow: 0 0 1rem rgba(0,0,0,.1);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
 }
 
 .read-more-btn {
@@ -114,6 +114,32 @@ img {
   max-width: 80%;
   text-align: center;
 }
+
+.graph {
+  width: 100%;
+}
+
+.graph-container {
+  width: 100%;
+  background-color: ghostwhite;
+  padding: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+  margin: auto;
+
+}
+
+.images {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.grad {
+  align-self: center;
+  height: 100px;
+
+}
+
 .graph.highlight {
   stroke-opacity: 1;
   stroke: black;

@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
 var networkMargin = { top: 0, right: 0, bottom: 0, left: 0 },
-  networkWidth = 1000 - networkMargin.left - networkMargin.right,
-  networkHeight = 1000 - networkMargin.top - networkMargin.bottom;
+  networkWidth = 500 - networkMargin.left - networkMargin.right,
+  networkHeight = 500 - networkMargin.top - networkMargin.bottom;
 
 // append the svg object to the body of the page
 var networkSvg = d3
@@ -38,6 +38,7 @@ networkSvg
 d3.json(
   "https://raw.githubusercontent.com/DS4200-S23-Class/project-dylan-parker-ethan-jaeson-ryan/master/data_205.json",
   function (data2) {
+
     // Initialize the links
     var link = networkSvg
       .selectAll("line")
@@ -78,9 +79,9 @@ d3.json(
           ) * 5
         );
       })
+
+
       .on("mouseover", function (d) {
-        // change the fill color to red on hover
-        d3.select(this).style("stroke-opacity", 1);
 
         // create a tooltip div
         var tooltip = d3
@@ -89,12 +90,12 @@ d3.json(
           .attr("class", "tooltip")
           .text(
             d.title +
-              "\n" +
-              " (articles in network citing this: " +
-              data2.links.filter(function (l) {
-                return l.source === d;
-              }).length +
-              ")"
+            "\n" +
+            " (articles in network citing this: " +
+            data2.links.filter(function (l) {
+              return l.source === d;
+            }).length +
+            ")"
           );
 
         // position the tooltip near the mouse
@@ -103,7 +104,6 @@ d3.json(
           .style("top", d3.event.pageY - 10 + "px");
       })
       .on("mouseout", function (d) {
-        d3.select(this).style("stroke-opacity", 0);
 
         // change the fill color back to steelblue on mouseout
         //d3.select(this).style("fill", function (d) { return colors(data2.links.filter(function (l) { return l.source === d.id }).length + 3) });
@@ -115,7 +115,7 @@ d3.json(
     // node.append("title")
     //   .text(function (d) { return d.title });
 
-    console.log(node);
+    console.log("hey");
 
     // Let's list the force we wanna apply on the network
     var simulation = d3
