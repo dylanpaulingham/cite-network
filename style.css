@@ -95,6 +95,7 @@ h2 {
 
 .tooltip {
   position: absolute;
+  text-align: left;
   z-index: 9999;
   background-color: #fff;
   color: #000;
