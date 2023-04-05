@@ -38,7 +38,6 @@ const scatterdata = d3.csv(
       "num_citations",
       "cite_per_year",
       "page_length",
-      "num_profiled_authors",
     ];
 
     const allGroup2 = {
@@ -47,7 +46,6 @@ const scatterdata = d3.csv(
       "num_citations": "Number of Citations",
       "cite_per_year": "Citations per Year",
       "page_length": "Page Length",
-      "num_profiled_authors": "Number of Profiled Authors",
     };
 
     // append options to dropdown
