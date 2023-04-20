@@ -1,0 +1,102 @@
+WEBVTT
+
+1
+00:00:02.460 --> 00:00:09.660
+So, this visualization gives you two different 
+ways to analyze the search results of a Google  
+
+2
+00:00:09.660 --> 00:00:15.240
+Scholar query. You can analyze the papers 
+based on content or based on context.  
+
+3
+00:00:16.260 --> 00:00:21.000
+So, here we can see a sample query: 
+"epigenetic profiling in single cells",  
+
+4
+00:00:21.000 --> 00:00:26.040
+and here are the results from Google 
+Scholar. So, this is the content approach,  
+
+5
+00:00:26.700 --> 00:00:34.260
+and it is a scatter plot that allows you to select 
+a quality of the paper and analyze each of the  
+
+6
+00:00:34.260 --> 00:00:38.520
+papers based on that quality and see if there's 
+any outliers - in the case here there is an  
+
+7
+00:00:38.520 --> 00:00:44.460
+outlier - and based on the results you can click 
+on - you can hover to see some information about  
+
+8
+00:00:44.460 --> 00:00:48.840
+the paper, and then you can click to actually get 
+the abstract and read more and figure out if it's  
+
+9
+00:00:48.840 --> 00:00:52.800
+something you want to actually read the entire 
+paper of. If you do, you can just copy the results  
+
+10
+00:00:52.800 --> 00:01:00.420
+from last selected paper. This also allows you to 
+notice that there's trends in results, such as the  
+
+11
+00:01:00.420 --> 00:01:10.740
+citations per year and the publication year having 
+a correlation, or the citations per year and the  
+
+12
+00:01:10.740 --> 00:01:17.340
+number of citations would, of course, have a 
+pretty distinct correlation. Now for context,  
+
+13
+00:01:17.340 --> 00:01:23.100
+this network graph puts all the papers in a 
+network, where they're connected based on whether  
+
+14
+00:01:23.100 --> 00:01:27.120
+or not they cite each other. You can see here 
+that there's an arrow denoting which paper cites  
+
+15
+00:01:27.120 --> 00:01:33.060
+the other and so you can see that this paper is 
+actually pretty central to the network, cited by  
+
+16
+00:01:34.140 --> 00:01:38.640
+13 other papers, and so then you can click on 
+that paper and see more information about it.  
+
+17
+00:01:39.480 --> 00:01:43.500
+Noticeably, when you select a paper here, 
+it's highlighted in orange. That same paper  
+
+18
+00:01:43.500 --> 00:01:47.640
+will also be highlighted in orange up here, 
+so you can then look at more content related  
+
+19
+00:01:47.640 --> 00:01:53.520
+results by clicking up above. Those are the 
+two major functions of the visualization. We  
+
+20
+00:01:53.520 --> 00:01:58.200
+think that it can help you when researching a new 
+subject and selecting papers for further research.
+

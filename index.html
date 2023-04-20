@@ -11,40 +11,32 @@
 </head>
 
 <body>
-
     <div class="read-more-container">
         <div class="container">
             <h1> Visualizing connections between scientific publications using networks and embeddings </h1>
-        </div>
-        <div class="container">
-            <h3>Motivation</h3>
+            <h2>Motivation</h2>
             <p>
                 This project addresses a situation where students wish to research a new
                 scientific subject by collecting a well-informed list of scientific
                 articles to read through a Google Scholar query.
-                <span class="read-more-text">
-                    The problem with such a
-                    query is that Google Scholar search results are simple and linear,
-                    preventing the student from comparing results across content metrics or
-                    discovering contextual relations between papers. This means that the
-                    students must select papers to read based on less information and
-                    considering, potentially reducing the quality and effectiveness of their
-                    research.
-                    Conversely, since research is the first step in learning a new
-                    subject, improving this process could quickly improve a student’s
-                    interest and understanding of a novel subject matter. This tool aid in
-                    such research by presenting the results of a Google Scholar search in
-                    both a network and scatterplot embedding. The resulting scatterplot's axes
-                    can be adjusted based on user preference. Also, papers can be
-                    clicked on and hovered over to reveal further information such as Authors
-                    and Abstract, which can expedite the process of selecting papers for further review.
+                The problem with such a
+                query is that Google Scholar search results are simple and linear,
+                preventing the student from comparing results across content metrics or
+                discovering contextual relations between papers. This means that the
+                students must select papers to read based on less information and
+                considering, potentially reducing the quality and effectiveness of their
+                research.
+                Conversely, since research is the first step in learning a new
+                subject, improving this process could quickly improve a student’s
+                interest and understanding of a novel subject matter. This tool aid in
+                such research by presenting the results of a Google Scholar search in
+                both a network and scatterplot embedding. The resulting scatterplot's axes
+                can be adjusted based on user preference. Also, papers can be
+                clicked on and hovered over to reveal further information such as Authors
+                and Abstract, which can expedite the process of selecting papers for further review.
 
-                </span>
             </p>
-            <span class="read-more-btn">Read More...</span>
-        </div>
-        <div class="container">
-            <h3>Background</h3>
+            <h2>Background</h2>
             <p>
                 This tool visualizes information about the search results of a specific Google Scholar query (in the
                 case of our example visual, the query is “epigenetic profiling in single cells”). This included the
@@ -52,23 +44,32 @@
                 Each paper has a list of papers it cites and papers that cite it, which are used to create the
                 citation network visualization. The ordinal metrics are visualized on a scatterplot, with adjustable
                 axes based on user selection.
-                <span class="read-more-text">
-                    The data was scraped from the Google Scholar webpage using ScholarlyAPI and ScaperAPI. Web scraping
-                    is a complicated ethical issue, since most websites do not encourage automatic scraping efforts. We
-                    tried to
-                    mitigate traffic concerns by using the ScraperAPI, which incorporated automated delays on each
-                    query. The data is significantly biased towards Google Scholar’s search algorithm, since we scrape
-                    the top 200 search
-                    results from that webpage alone. In terms of data quality, some of the venues of publication, such
-                    as Nature, have extraneous symbols and characters added to the end of their titles, which need to be
-                    removed to
-                    show the real name. Also, the page count is in a string format and sometimes includes letters or
-                    dashes, so these values need to be removed and cast into integers in order to calculate the page
-                    length.
-                </span>
-            </p>
-            <span class="read-more-btn">Read More...</span>
 
+            </p>
+
+            <h3> Data</h3>
+            <p>
+                The data was scraped from the Google Scholar webpage using ScholarlyAPI and ScaperAPI. Web scraping
+                is a complicated ethical issue, since most websites do not encourage automatic scraping efforts. We
+                tried to
+                mitigate traffic concerns by using the ScraperAPI, which incorporated automated delays on each
+                query. The data is significantly biased towards Google Scholar’s search algorithm, since we scrape
+                the top 200 search
+                results from that webpage alone. In terms of data quality, some of the venues of publication, such
+                as Nature, have extraneous symbols and characters added to the end of their titles, which need to be
+                removed to
+                show the real name. Also, the page count is in a string format and sometimes includes letters or
+                dashes, so these values need to be removed and cast into integers in order to calculate the page
+                length.
+            </p>
+
+            <h3> Demo</h3>
+            <div class="flex-container">
+                <video width="480" height="360" controls>
+                    <source src="Visualizing scientific publications.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3>Report</h3>
         </div>
     </div>
 

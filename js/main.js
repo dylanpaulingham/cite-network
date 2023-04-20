@@ -399,6 +399,9 @@ const graphdata = d3.json(
           ) * 5
         );
       })
+      .on("mouseenter", function (d) {
+
+      })
       .on("click", function (d) {
 
         // Get the current fill color of the circle
