@@ -2,851 +2,401 @@
   "nodes": [
     {
       "id": 0,
-      "title": "Single-cell profiling of epigenetic modifiers identifies PRDM14 as an inducer of cell fate in the mammalian embryo"
+      "name": "Single-cell protein analysis by mass spectrometry"
     },
     {
       "id": 1,
-      "title": "Single-cell technologies: a new lens into epigenetic regulation in development"
+      "name": "Single-cell imaging mass spectrometry"
     },
-    { "id": 2, "title": "Single cell epigenetic visualization assay" },
+    {
+      "id": 2,
+      "name": "Single-cell mass spectrometry for discovery proteomics: quantifying translational cell heterogeneity in the 16-cell frog (Xenopus) embryo"
+    },
     {
       "id": 3,
-      "title": "Single-cell triple omics sequencing reveals genetic, epigenetic, and transcriptomic heterogeneity in hepatocellular carcinomas"
+      "name": "Single-cell mass-spectrometry quantifies the emergence of macrophage heterogeneity"
     },
     {
       "id": 4,
-      "title": "Assessment of computational methods for the analysis of single-cell ATAC-seq data"
+      "name": "Single-cell mass spectrometry"
     },
     {
       "id": 5,
-      "title": "SINEultaneous profiling of epigenetic heterogeneity and transcriptome in single cells"
+      "name": "Single-cell protein analysis"
     },
     {
       "id": 6,
-      "title": "Epigenetic mechanisms of brain sexual differentiation"
+      "name": "Categorizing cells on the basis of their chemical profiles: progress in single-cell mass spectrometry"
     },
     {
       "id": 7,
-      "title": "Single-cell multiomics: multiple measurements from single cells"
+      "name": "Single-cell native mass spectrometry of human erythrocytes"
     },
     {
       "id": 8,
-      "title": "ITIH5 mediates epigenetic reprogramming of breast cancer cells"
+      "name": "Recent advances in single-cell MALDI mass spectrometry imaging and potential clinical impact"
     },
     {
       "id": 9,
-      "title": "scNMT-seq enables joint profiling of chromatin accessibility DNA methylation and transcription in single cells"
+      "name": "Optically guided single cell mass spectrometry of rat dorsal root ganglia to profile lipids, peptides and proteins"
     },
     {
       "id": 10,
-      "title": "Unsupervised clustering and epigenetic classification of single cells"
+      "name": "A dream of single-cell proteomics"
     },
     {
       "id": 11,
-      "title": "Genome-wide profiling of DNA methylation provides insights into epigenetic regulation of fungal development in a plant pathogenic fungus, Magnaporthe oryzae"
+      "name": "Single-cell mass spectrometry reveals small molecules that affect cell fates in the 16-cell embryo"
     },
     {
       "id": 12,
-      "title": "Epigenetic profiling of multidrug-resistant human MCF-7 breast adenocarcinoma cells reveals novel hyper-and hypomethylated targets"
+      "name": "Direct metabolomics for plant cells by live single-cell mass spectrometry"
     },
     {
       "id": 13,
-      "title": "Phenotypic and epigenetic adaptations of cord blood CD4+ T cells to maternal obesity"
+      "name": "Improved single-cell proteome coverage using narrow-bore packed NanoLC columns and ultrasensitive mass spectrometry"
     },
     {
       "id": 14,
-      "title": "Developmental epigenetic modification regulates stochastic expression of clustered protocadherin genes, generating single neuron diversity"
+      "name": "Ultra-high sensitivity mass spectrometry quantifies single-cell proteome changes upon perturbation"
     },
     {
       "id": 15,
-      "title": "Profiling the epigenetic landscape of the antigen receptor repertoire: the missing epi-immunogenomics data"
+      "name": "Streamlined single-cell proteomics by an integrated microfluidic chip and data-independent acquisition mass spectrometry"
     },
     {
       "id": 16,
-      "title": "An epigenetic perspective on intra-tumour heterogeneity: novel insights and new challenges from multiple fields"
+      "name": "Spatially resolved mass spectrometry at the single cell: recent innovations in proteomics and metabolomics"
     },
     {
       "id": 17,
-      "title": "An ultra-low-input native ChIP-seq protocol for genome-wide profiling of rare cell populations"
+      "name": "Single cell protein analysis for systems biology"
     },
     {
       "id": 18,
-      "title": "Epigenetic optical mapping of 5-hydroxymethylcytosine in nanochannel arrays"
+      "name": "High-throughput single-cell immunoassay in the cellular native environment using online desalting dual-spray mass spectrometry"
     },
     {
       "id": 19,
-      "title": "Quantifying Waddington\u2019s epigenetic landscape: a comparison of single-cell potency measures"
+      "name": "Towards high throughput and high information coverage: advanced single-cell mass spectrometric techniques"
     },
-    { "id": 20, "title": "The epigenetic landscape of T cell exhaustion" },
+    {
+      "id": 20,
+      "name": "High throughput screening of complex biological samples with mass spectrometry--from bulk measurements to single cell analysis"
+    },
     {
       "id": 21,
-      "title": "Transition states and cell fate decisions in epigenetic landscapes"
+      "name": "Single-cell analysis by ambient mass spectrometry"
     },
     {
       "id": 22,
-      "title": "Gene expression dynamics during germline specification in mice identified by quantitative single-cell gene expression profiling"
+      "name": "Microsampling capillary electrophoresis mass spectrometry enables single-cell proteomics in complex tissues: developing cell clones in live Xenopus laevis and zebrafish embryos"
     },
     {
       "id": 23,
-      "title": "Single-Cell Multiomics: Simultaneous Epigenetic and Transcriptional Profiling: 10x Genomics shares experimental planning and sample preparation tips for the Chromium Single Cell Multiome ATAC+ Gene Expression system"
+      "name": "In vivo subcellular mass spectrometry enables proteo-metabolomic single-cell systems biology in a chordate embryo developing to a normally behaving tadpole (X. laevis)"
     },
-    { "id": 24, "title": "Profiling genome-wide DNA methylation" },
+    {
+      "id": 24,
+      "name": "Technology development trend of electrospray ionization mass spectrometry for single-cell proteomics"
+    },
     {
       "id": 25,
-      "title": "Epigenetic evidence for distinct contributions of resident and acquired myonuclei during long-term exercise adaptation using timed in vivo myonuclear labeling"
+      "name": "Ultrasensitive single-cell proteomics workflow identifies> 1000 protein groups per mammalian cell"
     },
     {
       "id": 26,
-      "title": "Flap-enabled next-generation capture (FENGC): precision targeted single-molecule profiling of epigenetic heterogeneity, chromatin dynamics, and genetic variation"
+      "name": "Genetics of single-cell protein abundance variation in large yeast populations"
     },
     {
       "id": 27,
-      "title": "Genetic and epigenetic control of retinal development in zebrafish"
+      "name": "Detection of Histidine-Tagged Protein in Escherichia coli by Single-Cell Inductively Coupled Plasma-Mass Spectrometry"
     },
     {
       "id": 28,
-      "title": "Bioinformatics tools for genome-wide epigenetic research"
+      "name": "Microfluidics towards single cell resolution protein analysis"
     },
     {
       "id": 29,
-      "title": "Analyzing genomic and epigenetic profiles in single cells by hybrid transposase (scGET-seq)"
-    },
-    {
-      "id": 30,
-      "title": "Noise and epigenetic inheritance of single-cell division times influence population fitness"
-    },
-    {
-      "id": 31,
-      "title": "MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data"
-    },
-    {
-      "id": 32,
-      "title": "Simultaneous profiling of transcriptome and DNA methylome from a single cell"
-    },
-    {
-      "id": 33,
-      "title": "Integrative single-cell omics analyses reveal epigenetic heterogeneity in mouse embryonic stem cells"
-    },
-    {
-      "id": 34,
-      "title": "Pathology tissue--chromatin immunoprecipitation, coupled with high-throughput sequencing, allows the epigenetic profiling of patient samples"
-    },
-    {
-      "id": 35,
-      "title": "Modbamtools: Analysis of single-molecule epigenetic data for long-range profiling, heterogeneity, and clustering"
-    },
-    {
-      "id": 36,
-      "title": "Mapping the breast cancer metastatic cascade onto ctDNA using genetic and epigenetic clonal tracking"
-    },
-    {
-      "id": 37,
-      "title": "scTEM-seq: Single-cell analysis of transposable element methylation to link global epigenetic heterogeneity with transcriptional programs"
-    },
-    {
-      "id": 38,
-      "title": "Early transcriptional and epigenetic regulation of CD8+ T cell differentiation revealed by single-cell RNA sequencing"
-    },
-    {
-      "id": 39,
-      "title": "Transcriptional and epigenetic regulation of effector and memory CD8 T cell differentiation"
-    },
-    { "id": 40, "title": "Epigenetic cancer evolution, one cell at a time" },
-    {
-      "id": 41,
-      "title": "The methylome: approaches for global DNA methylation profiling"
-    },
-    {
-      "id": 42,
-      "title": "Transcriptomic, epigenetic, and functional analyses implicate neutrophil diversity in the pathogenesis of systemic lupus erythematosus"
-    },
-    {
-      "id": 43,
-      "title": "Visualizing allele-specific expression in single cells reveals epigenetic mosaicism in an H19 loss-of-imprinting mutant"
-    },
-    {
-      "id": 44,
-      "title": "DNA methylation: an epigenetic mark of cellular memory"
-    },
-    {
-      "id": 45,
-      "title": "FANCJ coordinates two pathways that maintain epigenetic stability at G-quadruplex DNA"
-    },
-    {
-      "id": 46,
-      "title": "Epigenetic regulators as the gatekeepers of hematopoiesis"
-    },
-    {
-      "id": 47,
-      "title": "A reference-guided approach for epigenetic characterization of single cells"
-    },
-    {
-      "id": 48,
-      "title": "Reversing age: dual species measurement of epigenetic age with a single clock"
-    },
-    {
-      "id": 49,
-      "title": "Synthetic epigenetics\u2014towards intelligent control of epigenetic states and cell identity"
-    },
-    {
-      "id": 50,
-      "title": "Estrogen regulates divergent transcriptional and epigenetic cell states in breast cancer"
-    },
-    {
-      "id": 51,
-      "title": "Profound phenotypic and epigenetic heterogeneity of the HIV-1-infected CD4+ T cell reservoir"
-    },
-    {
-      "id": 52,
-      "title": "Single-cell epigenomic analyses implicate candidate causal variants at inherited risk loci for Alzheimer\u2019s and Parkinson\u2019s diseases"
-    },
-    {
-      "id": 53,
-      "title": "Tracing the derivation of embryonic stem cells from the inner cell mass by single-cell RNA-Seq analysis"
-    },
-    {
-      "id": 54,
-      "title": "Targeted chromatin ligation, a robust epigenetic profiling technique for small cell numbers"
-    },
-    {
-      "id": 55,
-      "title": "Single-cell epigenetic analysis reveals principles of chromatin states in H3. 3-K27M gliomas"
-    },
-    {
-      "id": 56,
-      "title": "Intergenic transcription, cell-cycle and the developmentally regulated epigenetic profile of the human beta-globin locus"
-    },
-    {
-      "id": 57,
-      "title": "Beta cell-specific CD8+ T cells maintain stem cell memory-associated epigenetic programs during type 1 diabetes"
-    },
-    {
-      "id": 58,
-      "title": "Shared and distinct biological circuits in effector, memory and exhausted CD8+ T cells revealed by temporal single-cell transcriptomics and epigenetics"
-    },
-    {
-      "id": 59,
-      "title": "Clonal expansion and epigenetic inheritance of long-lasting NK cell memory"
-    },
-    {
-      "id": 60,
-      "title": "Dynamics of the epigenetic landscape during the maternal-to-zygotic transition"
-    },
-    {
-      "id": 61,
-      "title": "Induction of pluripotency in human endothelial cells resets epigenetic profile on genome scale"
-    },
-    {
-      "id": 62,
-      "title": "Reconstructing A/B compartments as revealed by Hi-C using long-range correlations in epigenetic data"
-    },
-    {
-      "id": 63,
-      "title": "MicroRNA expression profiling of single whole embryonic stem cells"
-    },
-    {
-      "id": 64,
-      "title": "Molecular profiling of single circulating tumor cells with diagnostic intention"
-    },
-    {
-      "id": 65,
-      "title": "Versatile workflow for cell type--resolved transcriptional and epigenetic profiles from cryopreserved human lung"
-    },
-    { "id": 66, "title": "Epigenetic regulation of the intestinal epithelium" },
-    {
-      "id": 67,
-      "title": "Epigenetic regulation in neurodegenerative diseases"
-    },
-    {
-      "id": 68,
-      "title": "Single-cell multimodal glioma analyses reveal epigenetic regulators of cellular plasticity and environmental stress response"
-    },
-    {
-      "id": 69,
-      "title": "Longitudinal single cell transcriptional and epigenetic mapping of effector, memory, and exhausted CD8 T cells reveals shared biological circuits across distinct cell fates"
-    },
-    {
-      "id": 70,
-      "title": "1508 Single-cell epigenetic profiling highlights genetic impact on chromatin accessibility in SLE"
-    },
-    {
-      "id": 71,
-      "title": "Single-cell multi-omic analysis profiles defective genome activation and epigenetic reprogramming associated with human pre-implantation embryo arrest"
-    },
-    {
-      "id": 72,
-      "title": "The spectrum and regulatory landscape of intestinal innate lymphoid cells are shaped by the microbiome"
-    },
-    {
-      "id": 73,
-      "title": "Epigenetics and tissue immunity\u2014Translating environmental cues into functional adaptations"
-    },
-    {
-      "id": 74,
-      "title": "Intra-and interindividual epigenetic variation in human germ cells"
-    },
-    {
-      "id": 75,
-      "title": "ZEB2 shapes the epigenetic landscape of atherosclerosis"
-    },
-    {
-      "id": 76,
-      "title": "Subtype heterogeneity and epigenetic convergence in neuroendocrine prostate cancer"
-    },
-    {
-      "id": 77,
-      "title": "EPCO-01. EPIGENETIC REPROGRAMMING SHAPES THE MOLECULAR AND CELLULAR LANDSCAPE OF SCHWANNOMA"
-    },
-    {
-      "id": 78,
-      "title": "Epigenetic profiling linked to multisystem inflammatory syndrome in children (MIS-C): A multicenter, retrospective study"
-    },
-    {
-      "id": 79,
-      "title": "Multi-omics maps of cotton fibre reveal epigenetic basis for staged single-cell differentiation"
-    },
-    {
-      "id": 80,
-      "title": "Mesenchymal stromal cells in the bone marrow niche consist of multi-populations with distinct transcriptional and epigenetic properties"
-    },
-    {
-      "id": 81,
-      "title": "Heterogeneity in white blood cells has potential to confound DNA methylation measurements"
-    },
-    {
-      "id": 82,
-      "title": "A novel epigenetic signature for overall survival prediction in patients with breast cancer"
-    },
-    {
-      "id": 83,
-      "title": "The epigenetic control of stemness in CD8+ T cell fate commitment"
-    },
-    {
-      "id": 84,
-      "title": "Epigenetic and transcriptomic profiling of mammary gland development and tumor models disclose regulators of cell state plasticity"
-    },
-    {
-      "id": 85,
-      "title": "Distinct evolution and dynamics of epigenetic and genetic heterogeneity in acute myeloid leukemia"
-    },
-    { "id": 86, "title": "Intratumor heterogeneity in epigenetic patterns" },
-    {
-      "id": 87,
-      "title": "Single-cell transcriptome sequencing: recent advances and remaining challenges"
-    },
-    {
-      "id": 88,
-      "title": "Dynamic equilibrium and heterogeneity of mouse pluripotent stem cells with distinct functional and epigenetic states"
-    },
-    {
-      "id": 89,
-      "title": "Single-nucleus chromatin accessibility reveals intratumoral epigenetic heterogeneity in IDH1 mutant gliomas"
-    },
-    {
-      "id": 90,
-      "title": "EMT is associated with an epigenetic signature of ECM remodeling genes"
-    },
-    {
-      "id": 91,
-      "title": "Single molecule epigenetic analysis in a nanofluidic channel"
-    },
-    {
-      "id": 92,
-      "title": "An in vitro model of tumor heterogeneity resolves genetic, epigenetic, and stochastic sources of cell state variability"
-    },
-    {
-      "id": 93,
-      "title": "Epigenetic characterization of the early embryo with a chromatin immunoprecipitation protocol applicable to small cell populations"
-    },
-    {
-      "id": 94,
-      "title": "Integrated single-cell transcriptomic and epigenetic study of cell state transition and lineage commitment in embryonic mouse cerebellum"
-    },
-    { "id": 95, "title": "Epigenetics of alcohol-related liver diseases" },
-    {
-      "id": 96,
-      "title": "Enhanced epigenetic profiling of classical human monocytes reveals a specific signature of healthy aging in the DNA methylome"
-    },
-    {
-      "id": 97,
-      "title": "Disruption of TET2 promotes the therapeutic efficacy of CD19-targeted T cells"
-    },
-    {
-      "id": 98,
-      "title": "Transgenerational epigenetic inheritance under environmental stress by genome-wide DNA methylation profiling in cyanobacterium"
-    },
-    {
-      "id": 99,
-      "title": "Preleukemic mutations in human acute myeloid leukemia affect epigenetic regulators and persist in remission"
-    },
-    {
-      "id": 100,
-      "title": "Mechanisms for the epigenetic inheritance of stress response in single cells"
-    },
-    {
-      "id": 101,
-      "title": "Single molecule-level detection and long read-based phasing of epigenetic variations in bacterial methylomes"
-    },
-    {
-      "id": 102,
-      "title": "Epigenetic control of gene regulation during development and disease: A view from the retina"
-    },
-    {
-      "id": 103,
-      "title": "Parental haplotype-specific single-cell transcriptomics reveal incomplete epigenetic reprogramming in human female germ cells"
-    },
-    {
-      "id": 104,
-      "title": "Systematic review of epigenetic therapies for treatment of IDH-mutant glioma"
-    },
-    {
-      "id": 105,
-      "title": "The role of epigenetic mechanisms in the regulation of gene expression in the cyclical endometrium"
-    },
-    {
-      "id": 106,
-      "title": "Challenges and emerging directions in single-cell analysis"
-    },
-    {
-      "id": 107,
-      "title": "Epigenetic profiling of somatic tissues from human autopsy specimens identifies tissue-and individual-specific DNA methylation patterns"
-    },
-    {
-      "id": 108,
-      "title": "Lamarck rises from his grave: parental environment-induced epigenetic inheritance in model organisms and humans"
-    },
-    {
-      "id": 109,
-      "title": "DNA methylation profiles of human active and inactive X chromosomes"
-    },
-    {
-      "id": 110,
-      "title": "Age-specific epigenetic drift in late-onset Alzheimer's disease"
-    },
-    {
-      "id": 111,
-      "title": "Epigenetic tumor heterogeneity in the era of single-cell profiling with nanopore sequencing"
-    },
-    {
-      "id": 112,
-      "title": "Alteration of epigenetic profile in human hepatocellular carcinoma and its clinical implications"
-    },
-    {
-      "id": 113,
-      "title": "Cellular heterogeneity during mouse pancreatic ductal adenocarcinoma progression at single-cell resolution"
-    },
-    {
-      "id": 114,
-      "title": "Sequential ChIP protocol for profiling bivalent epigenetic modifications (ReChIP)"
-    },
-    { "id": 115, "title": "Epigenetic heterogeneity in cancer" },
-    {
-      "id": 116,
-      "title": "Advances in the profiling of DNA modifications: cytosine methylation and beyond"
-    },
-    {
-      "id": 117,
-      "title": "Cell-specific epigenetic changes in atherosclerosis"
-    },
-    {
-      "id": 118,
-      "title": "Scaling by shrinking: empowering single-cell'omics' with microfluidic devices"
-    },
-    {
-      "id": 119,
-      "title": "Epigenetic regulation of male fate commitment from an initially bipotential system"
-    },
-    {
-      "id": 120,
-      "title": "Teratozoospermia and asthenozoospermia are associated with specific epigenetic signatures"
-    },
-    {
-      "id": 121,
-      "title": "Nature of epigenetic aging from a single-cell perspective"
-    },
-    {
-      "id": 122,
-      "title": "The interface between transcriptional and epigenetic control of effector and memory CD 8+ T-cell differentiation"
-    },
-    {
-      "id": 123,
-      "title": "Genetic, epigenetic and stem cell alterations in endometriosis: new insights and potential therapeutic perspectives"
-    },
-    {
-      "id": 124,
-      "title": "Epigenetic-sensitive pathways in personalized therapy of major cardiovascular diseases"
-    },
-    {
-      "id": 125,
-      "title": "Epigenetic pathways and plasticity in brain tumors"
-    },
-    {
-      "id": 126,
-      "title": "Epigenetic reorganization during early embryonic lineage specification"
-    },
-    {
-      "id": 127,
-      "title": "Single cell analysis reveals dynamics of transposable element transcription following epigenetic de-repression"
-    },
-    {
-      "id": 128,
-      "title": "Developmental competence and epigenetic profile of porcine embryos produced by two different cloning methods"
-    },
-    {
-      "id": 129,
-      "title": "Deciphering the epigenetic code: an overview of DNA methylation analysis methods"
-    },
-    {
-      "id": 130,
-      "title": "Epigenetic traits inscribed in chromatin accessibility in aged hematopoietic stem cells"
-    },
-    {
-      "id": 131,
-      "title": "Epigenetic loss of heterogeneity from low to high grade localized prostate tumours"
-    },
-    {
-      "id": 132,
-      "title": "Analytical epigenetics: single-molecule optical detection of DNA and histone modifications"
-    },
-    {
-      "id": 133,
-      "title": "DNA methylation in embryo development: epigenetic impact of ART (assisted reproductive technologies)"
-    },
-    {
-      "id": 134,
-      "title": "Glioblastoma stem cells: driving resilience through chaos"
-    },
-    { "id": 135, "title": "Profiling epigenetic age in single cells" },
-    { "id": 136, "title": "The epigenetic basis of cellular heterogeneity" },
-    {
-      "id": 137,
-      "title": "Single-cell epigenomics: techniques and emerging applications"
-    },
-    {
-      "id": 138,
-      "title": "High-throughput chromatin accessibility profiling at single-cell resolution"
-    },
-    {
-      "id": 139,
-      "title": "Single-cell multimodal profiling reveals cellular epigenetic heterogeneity"
-    },
-    { "id": 140, "title": "Single cell cancer epigenetics" },
-    {
-      "id": 141,
-      "title": "Multifactorial profiling of epigenetic landscapes at single-cell resolution using MulTI-Tag"
-    },
-    {
-      "id": 142,
-      "title": "Single-cell chromatin modification profiling reveals increased epigenetic variations with aging"
-    },
-    {
-      "id": 143,
-      "title": "RA3 is a reference-guided approach for epigenetic characterization of single cells"
-    },
-    {
-      "id": 144,
-      "title": "Parallel single-cell sequencing links transcriptional and epigenetic heterogeneity"
-    },
-    {
-      "id": 145,
-      "title": "Chromatin Velocity reveals epigenetic dynamics by single-cell profiling of heterochromatin and euchromatin"
-    },
-    {
-      "id": 146,
-      "title": "Single-cell analysis of clonal maintenance of transcriptional and epigenetic states in cancer cells"
-    },
-    {
-      "id": 147,
-      "title": "Integrative single-cell analysis of transcriptional and epigenetic states in the human adult brain"
-    },
-    {
-      "id": 148,
-      "title": "Single-cell multimodal glioma analyses identify epigenetic regulators of cellular plasticity and environmental stress response"
-    },
-    {
-      "id": 149,
-      "title": "Bifurcation analysis of single-cell gene expression data reveals epigenetic landscape"
-    },
-    {
-      "id": 150,
-      "title": "cfNOMe\u2014A single assay for comprehensive epigenetic analyses of cell-free DNA"
-    },
-    {
-      "id": 151,
-      "title": "Cell-type-specific resolution epigenetics without the need for cell sorting or single-cell biology"
-    },
-    {
-      "id": 152,
-      "title": "Decoding dynamic epigenetic landscapes in human oocytes using single-cell multi-omics sequencing"
-    },
-    {
-      "id": 153,
-      "title": "A single-cell transcriptomics CRISPR-activation screen identifies epigenetic regulators of the zygotic genome activation program"
-    },
-    {
-      "id": 154,
-      "title": "Genotyping of Multiple Genomic Loci with Chromatin Accessibility Profiling in Single Cells Links Clonal Hierarchy with Epigenetic Variation in Acute Myeloid Leukemia"
-    },
-    { "id": 155, "title": "Epigenetics reloaded: the single-cell revolution" },
-    {
-      "id": 156,
-      "title": "Multi-omics profiling of mouse gastrulation at single-cell resolution"
-    },
-    {
-      "id": 157,
-      "title": "Chemoenzymatic labeling of DNA methylation patterns for single-molecule epigenetic mapping"
-    },
-    {
-      "id": 158,
-      "title": "CoBATCH for high-throughput single-cell epigenomic profiling"
-    },
-    {
-      "id": 159,
-      "title": "Strategies for the acquisition of transcriptional and epigenetic information in single cells"
-    },
-    {
-      "id": 160,
-      "title": "Single-cell epigenomics: powerful new methods for understanding gene regulation and cell identity"
-    },
-    {
-      "id": 161,
-      "title": "Epigenetic landscapes of single-cell chromatin accessibility and transcriptomic immune profiles of T cells in COVID-19 patients"
-    },
-    {
-      "id": 162,
-      "title": "A single nucleotide polymorphism chip-based method for combined genetic and epigenetic profiling: validation in decitabine therapy and tumor/normal comparisons"
-    },
-    {
-      "id": 163,
-      "title": "Epigenetic evolution and lineage histories of chronic lymphocytic leukaemia"
-    },
-    {
-      "id": 164,
-      "title": "Molecular profiling for precision cancer therapies"
-    },
-    { "id": 165, "title": "Integrative single-cell analysis" },
-    {
-      "id": 166,
-      "title": "Epigenetic encoding, heritability and plasticity of glioma transcriptional cell states"
-    },
-    {
-      "id": 167,
-      "title": "Single-cell epigenomics: Recording the past and predicting the future"
-    },
-    {
-      "id": 168,
-      "title": "Single cells make big data: New challenges and opportunities in transcriptomics"
-    },
-    {
-      "id": 169,
-      "title": "Genome-wide DNA methylation profiling of peripheral blood reveals an epigenetic signature associated with severe COVID-19"
-    },
-    {
-      "id": 170,
-      "title": "Hematopoietic competence is a rare property of neural stem cells that may depend on genetic and epigenetic alterations"
-    },
-    {
-      "id": 171,
-      "title": "Single cell multi-omics profiling reveals a hierarchical epigenetic landscape during mammalian germ layer specification"
-    },
-    {
-      "id": 172,
-      "title": "Aging alters the epigenetic asymmetry of HSC division"
-    },
-    {
-      "id": 173,
-      "title": "Multiplexed, single-molecule, epigenetic analysis of plasma-isolated nucleosomes for cancer diagnostics"
-    },
-    {
-      "id": 174,
-      "title": "Single-cell lineage analysis reveals genetic and epigenetic interplay in glioblastoma drug resistance"
-    },
-    {
-      "id": 175,
-      "title": "Exploiting epigenetic dependencies in ovarian cancer therapy"
-    },
-    {
-      "id": 176,
-      "title": "Single-cell Atlas of common variable immunodeficiency shows germinal center-associated epigenetic dysregulation in B-cell responses"
-    },
-    {
-      "id": 177,
-      "title": "Micro-and nanofluidic technologies for epigenetic profiling"
-    },
-    {
-      "id": 178,
-      "title": "Single cell gene expression profiling of nasal ciliated cells reveals distinctive biological processes related to epigenetic mechanisms in patients with severe COVID-19"
-    },
-    {
-      "id": 179,
-      "title": "Chromatin and single-cell RNA-seq profiling reveal dynamic signaling and metabolic transitions during human spermatogonial stem cell development"
-    },
-    {
-      "id": 180,
-      "title": "Epigenetic profile of developmentally important genes in bovine oocytes"
-    },
-    {
-      "id": 181,
-      "title": "Epigenetics of atherosclerosis: emerging mechanisms and methods"
-    },
-    {
-      "id": 182,
-      "title": "Dynamic transcriptional and epigenetic changes drive cellular plasticity in the liver"
-    },
-    {
-      "id": 183,
-      "title": "The independent prognostic value of global epigenetic alterations: An analysis of single-cell ATAC-seq of circulating leukocytes from trauma patients followed by validation in whole blood leukocyte transcriptomes across three etiologies of critical illness"
-    },
-    {
-      "id": 184,
-      "title": "Molecular profiling of epigenetic landscape of cancer cells during extracellular matrix detachment"
-    },
-    { "id": 185, "title": "Epigenetic regulation of T cell exhaustion" },
-    {
-      "id": 186,
-      "title": "The dynamic epigenetic regulation of the inactive X chromosome in healthy human B cells is dysregulated in lupus patients"
-    },
-    {
-      "id": 187,
-      "title": "Epigenetic memories: the hidden drivers of bacterial persistence?"
-    },
-    {
-      "id": 188,
-      "title": "Mapping the epigenetic modifications of DNA and RNA"
-    },
-    {
-      "id": 189,
-      "title": "Epigenetic regulator function through mouse gastrulation"
-    },
-    {
-      "id": 190,
-      "title": "High-resolution single-cell DNA methylation measurements reveal epigenetically distinct hematopoietic stem cell subpopulations"
-    },
-    {
-      "id": 191,
-      "title": "Single-cell transcriptomic and epigenetic analyses of mouse mammary development starting with the embryo"
-    },
-    {
-      "id": 192,
-      "title": "Expansion microscopy allows high resolution single cell analysis of epigenetic readers"
-    },
-    {
-      "id": 193,
-      "title": "Multi-omics of single cells: strategies and applications"
-    },
-    {
-      "id": 194,
-      "title": "Galactosemia, a single gene disorder with epigenetic consequences"
-    },
-    { "id": 195, "title": "Single-cell multimodal omics: the power of many" },
-    {
-      "id": 196,
-      "title": "Epigenetic regulation of neuronal cell specification inferred with single cell \u201cOmics\u201d data"
-    },
-    {
-      "id": 197,
-      "title": "Epigenetic Regulations in Mammalian Cells: Roles and Profiling Techniques"
-    },
-    {
-      "id": 198,
-      "title": "TAD-like single-cell domain structures exist on both active and inactive X chromosomes and persist under epigenetic perturbations"
-    },
-    {
-      "id": 199,
-      "title": "Genetic and epigenetic profiling of the infertile male"
-    },
-    {
-      "id": 200,
-      "title": "Epigenetic profiling and response to CD19 chimeric antigen receptor T-cell therapy in B-cell malignancies"
-    },
-    {
-      "id": 201,
-      "title": "Epigenetic regulation in mammalian preimplantation embryo development"
-    },
-    {
-      "id": 202,
-      "title": "Single-cell epigenetics--chromatin modification atlas unveiled by mass cytometry"
-    },
-    {
-      "id": 203,
-      "title": "Genome-wide DNA methylation profiling in whole blood reveals epigenetic signatures associated with migraine"
-    },
-    {
-      "id": 204,
-      "title": "Single-cell multiomic analysis identifies regulatory programs in mixed-phenotype acute leukemia"
+      "name": "Single-cell proteomics: progress and prospects"
     }
   ],
   "links": [
-    { "source": 135, "target": 121 },
-    { "source": 136, "target": 140 },
-    { "source": 136, "target": 111 },
-    { "source": 137, "target": 7 },
-    { "source": 137, "target": 142 },
-    { "source": 137, "target": 44 },
-    { "source": 137, "target": 24 },
-    { "source": 137, "target": 168 },
-    { "source": 137, "target": 151 },
-    { "source": 137, "target": 102 },
-    { "source": 137, "target": 193 },
-    { "source": 137, "target": 86 },
-    { "source": 137, "target": 111 },
-    { "source": 137, "target": 24 },
-    { "source": 138, "target": 136 },
-    { "source": 138, "target": 31 },
-    { "source": 138, "target": 204 },
-    { "source": 138, "target": 95 },
-    { "source": 138, "target": 73 },
-    { "source": 139, "target": 136 },
-    { "source": 139, "target": 31 },
-    { "source": 139, "target": 7 },
-    { "source": 139, "target": 118 },
-    { "source": 139, "target": 106 },
-    { "source": 139, "target": 140 },
-    { "source": 139, "target": 197 },
-    { "source": 142, "target": 136 },
-    { "source": 142, "target": 96 },
-    { "source": 142, "target": 55 },
-    { "source": 144, "target": 165 },
-    { "source": 144, "target": 136 },
-    { "source": 144, "target": 31 },
-    { "source": 144, "target": 195 },
-    { "source": 144, "target": 156 },
-    { "source": 144, "target": 9 },
-    { "source": 144, "target": 167 },
-    { "source": 144, "target": 60 },
-    { "source": 144, "target": 7 },
-    { "source": 144, "target": 106 },
-    { "source": 144, "target": 152 },
-    { "source": 144, "target": 148 },
-    { "source": 144, "target": 160 },
-    { "source": 144, "target": 32 },
-    { "source": 144, "target": 181 },
-    { "source": 144, "target": 135 },
-    { "source": 144, "target": 37 },
-    { "source": 144, "target": 151 },
-    { "source": 144, "target": 190 },
-    { "source": 144, "target": 139 },
-    { "source": 144, "target": 193 },
-    { "source": 144, "target": 140 },
-    { "source": 144, "target": 73 },
-    { "source": 144, "target": 71 },
-    { "source": 144, "target": 197 },
-    { "source": 144, "target": 33 },
-    { "source": 144, "target": 171 },
-    { "source": 144, "target": 68 },
-    { "source": 144, "target": 121 },
-    { "source": 144, "target": 5 },
-    { "source": 145, "target": 141 },
-    { "source": 145, "target": 140 },
-    { "source": 146, "target": 166 },
-    { "source": 146, "target": 140 },
-    { "source": 146, "target": 16 },
-    { "source": 147, "target": 165 },
-    { "source": 147, "target": 167 },
-    { "source": 147, "target": 95 },
-    { "source": 148, "target": 140 },
-    { "source": 149, "target": 106 },
-    { "source": 152, "target": 140 },
-    { "source": 152, "target": 197 }
+    {
+      "source": 0,
+      "target": 15
+    },
+    {
+      "source": 0,
+      "target": 4
+    },
+    {
+      "source": 1,
+      "target": 6
+    },
+    {
+      "source": 1,
+      "target": 4
+    },
+    {
+      "source": 1,
+      "target": 9
+    },
+    {
+      "source": 2,
+      "target": 29
+    },
+    {
+      "source": 2,
+      "target": 25
+    },
+    {
+      "source": 2,
+      "target": 13
+    },
+    {
+      "source": 2,
+      "target": 0
+    },
+    {
+      "source": 2,
+      "target": 6
+    },
+    {
+      "source": 2,
+      "target": 28
+    },
+    {
+      "source": 2,
+      "target": 17
+    },
+    {
+      "source": 2,
+      "target": 21
+    },
+    {
+      "source": 2,
+      "target": 4
+    },
+    {
+      "source": 2,
+      "target": 24
+    },
+    {
+      "source": 3,
+      "target": 29
+    },
+    {
+      "source": 3,
+      "target": 13
+    },
+    {
+      "source": 3,
+      "target": 0
+    },
+    {
+      "source": 6,
+      "target": 28
+    },
+    {
+      "source": 6,
+      "target": 4
+    },
+    {
+      "source": 6,
+      "target": 18
+    },
+    {
+      "source": 6,
+      "target": 19
+    },
+    {
+      "source": 6,
+      "target": 9
+    },
+    {
+      "source": 7,
+      "target": 4
+    },
+    {
+      "source": 8,
+      "target": 0
+    },
+    {
+      "source": 8,
+      "target": 1
+    },
+    {
+      "source": 10,
+      "target": 13
+    },
+    {
+      "source": 10,
+      "target": 0
+    },
+    {
+      "source": 10,
+      "target": 3
+    },
+    {
+      "source": 11,
+      "target": 21
+    },
+    {
+      "source": 11,
+      "target": 4
+    },
+    {
+      "source": 12,
+      "target": 21
+    },
+    {
+      "source": 12,
+      "target": 4
+    },
+    {
+      "source": 12,
+      "target": 7
+    },
+    {
+      "source": 12,
+      "target": 19
+    },
+    {
+      "source": 12,
+      "target": 9
+    },
+    {
+      "source": 13,
+      "target": 29
+    },
+    {
+      "source": 13,
+      "target": 16
+    },
+    {
+      "source": 13,
+      "target": 25
+    },
+    {
+      "source": 13,
+      "target": 0
+    },
+    {
+      "source": 13,
+      "target": 4
+    },
+    {
+      "source": 13,
+      "target": 19
+    },
+    {
+      "source": 13,
+      "target": 24
+    },
+    {
+      "source": 14,
+      "target": 4
+    },
+    {
+      "source": 15,
+      "target": 4
+    },
+    {
+      "source": 16,
+      "target": 24
+    },
+    {
+      "source": 17,
+      "target": 16
+    },
+    {
+      "source": 17,
+      "target": 13
+    },
+    {
+      "source": 17,
+      "target": 0
+    },
+    {
+      "source": 17,
+      "target": 3
+    },
+    {
+      "source": 18,
+      "target": 19
+    },
+    {
+      "source": 19,
+      "target": 24
+    },
+    {
+      "source": 20,
+      "target": 16
+    },
+    {
+      "source": 21,
+      "target": 4
+    },
+    {
+      "source": 21,
+      "target": 19
+    },
+    {
+      "source": 21,
+      "target": 9
+    },
+    {
+      "source": 22,
+      "target": 29
+    },
+    {
+      "source": 22,
+      "target": 16
+    },
+    {
+      "source": 22,
+      "target": 0
+    },
+    {
+      "source": 22,
+      "target": 4
+    },
+    {
+      "source": 22,
+      "target": 24
+    },
+    {
+      "source": 23,
+      "target": 4
+    },
+    {
+      "source": 25,
+      "target": 29
+    },
+    {
+      "source": 25,
+      "target": 15
+    },
+    {
+      "source": 25,
+      "target": 4
+    },
+    {
+      "source": 25,
+      "target": 24
+    },
+    {
+      "source": 29,
+      "target": 25
+    },
+    {
+      "source": 29,
+      "target": 19
+    },
+    {
+      "source": 29,
+      "target": 24
+    }
   ]
 }
